@@ -7,7 +7,7 @@ Bear features a variety of encryption methods, including `AES, XOR, DES, TLS, RC
 This C2 is for simulation only and is still under development.
 
 
-<img width="630" height="318" alt="imageedit_6_6316175302" src="https://github.com/user-attachments/assets/88c96b14-440e-4aaf-b95d-74379a888b21" />
+![Bear-C2 Framework](https://github.com/user-attachments/assets/b160db34-0355-4554-8990-e540c1afba5e)
 
 
 
