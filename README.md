@@ -1,7 +1,5 @@
+# BEAR-C2 [![Project Status](https://img.shields.io/badge/status-BETA-yellow?style=flat-square)]()
 
-[![Project Status](https://img.shields.io/badge/status-BETA-yellow?style=flat-square)]()
-
-# BEAR-C2
 Bear C2 is a compilation of C2 scripts, payloads, and stagers used in simulated attacks by Russian APT groups,
 Bear features a variety of encryption methods, including `AES, XOR, DES, TLS, RC4, RSA and ChaCha` to secure communication between the payload and the operator machine.
 This C2 is for simulation only and is still under development.
