@@ -6,7 +6,8 @@ BEAR-C2 is an adversary simulation and emulation framework built around real wor
 
 ---
 
-<img width="1735" height="906" alt="ae958cb6-ee6e-4bc1-85b7-bb1681acbdf7" src="https://github.com/user-attachments/assets/9e6be27f-d213-4d1d-bab4-d205a95a8808" />
+<img width="1735" height="906" alt="1" src="https://github.com/user-attachments/assets/11b96e6d-c47a-43d2-a579-831d73b7980b" />
+
 
 > [!CAUTION]
 > It's essential to note that this project is for educational and research purposes only, and any unauthorized use of it could lead to legal consequences.
@@ -26,11 +27,13 @@ chmod +x requirements.sh
 
 Accurately replicating **APT techniques** requires a `flexible environment capable of mimicking encryption methods, exfiltration techniques, and connection protocols` used in modern intrusions. However, achieving this level of precision has always been a challenge.
 
-<img width="1366" height="745" alt="Screenshot From 2026-06-10 22-56-09" src="https://github.com/user-attachments/assets/08e8cceb-2382-40e2-8574-59da028b738f" />
+<img width="1366" height="745" alt="2" src="https://github.com/user-attachments/assets/ff10c9a6-1441-4adb-8fe1-eb10b7049f18" />
+
 
 Every time an operator needs to test a specific **encryption scheme** with a particular **exfiltration profile**, a separate **C2 script** `must be built to match the attack scenario.` For example, one simulation might require **AES encryption** with **OneDrive exfiltration**, while another might need **a different encryption method** combined with **Dropbox exfiltration** to reflect the techniques observed in real world attacks. This lack of flexibility makes the process inefficient and time consuming.
 
-<img width="1359" height="679" alt="Screenshot From 2026-07-23 19-41-01" src="https://github.com/user-attachments/assets/cb48d4e4-b36a-4caa-b196-0c2c77398bca" />
+
+<img width="1359" height="679" alt="3" src="https://github.com/user-attachments/assets/30cf94aa-2f99-4f16-8469-c1379a0d84e2" />
 
 
 This is why **BEAR C2** was developed to provide **adversary simulation** with full customization through the new listener, allowing seamless configuration of  `connection protocols, encryption, exfiltration,` and automated loading techniques. This ensures that simulations can accurately reflect real **APT intrusions** without the need to build custom scripts for every scenario.
@@ -71,7 +74,7 @@ This version features a full GUI that streamlines adversary simulation operation
 Configure per-session exfiltration settings for supported cloud storage providers such as `Google Drive, OneDrive, and Dropbox.` The **Exfiltration Profile** interface allows you to define API access tokens and destination folder paths, enabling you to customize data collection workflows for each session. Each session can use its own exfiltration profile, making it easy to route collected data to different cloud storage providers or destinations depending on the operation.
 
 
-<img width="2423" height="708" alt="1785656148307" src="https://github.com/user-attachments/assets/d749026f-fb76-4483-b4d6-bdb4248577fc" />
+<img width="2423" height="708" alt="4" src="https://github.com/user-attachments/assets/72b66bb2-335f-4a96-ba77-9f76b40d55e0" />
 
 
 ## 💬 Integrated C2 Channels 
@@ -84,7 +87,8 @@ The initial objective of this stage is to enhance the realism of the adversary s
 
 This phase focuses on demonstrating how a trusted cloud messaging platform can serve as an intermediary communication channel between the operator and the simulated implant. By leveraging Telegram as the transport layer, the simulation highlights how legitimate online services may be used to blend command and control traffic with normal network activity while maintaining reliable bidirectional communication.
 
-<img width="1276" height="585" alt="Screenshot From 2026-08-06 12-53-38 (Edited)" src="https://github.com/user-attachments/assets/6b1c51a4-7e72-4d54-bca4-e831eefb5df1" />
+<img width="1276" height="585" alt="5" src="https://github.com/user-attachments/assets/751c6afa-a2fb-45f7-9d99-efcf554f78d8" />
+
 
 
 ### (Discord-based Agent)
@@ -95,8 +99,8 @@ The implant maintains a persistent connection to the Discord Gateway to receive 
 
 The objective is to provide a realistic environment for studying cloud-based communication patterns and to emphasize behavioral detection over destination-based detection.
 
+<img width="1276" height="577" alt="6" src="https://github.com/user-attachments/assets/e0232e1c-725e-486d-925d-9172c7dd5c06" />
 
-<img width="1276" height="577" alt="Screenshot From 2026-08-06 13-10-30" src="https://github.com/user-attachments/assets/ed625043-4a73-4fe6-83f9-173aa2e20b24" />
 
 
 ---
@@ -105,7 +109,8 @@ The objective is to provide a realistic environment for studying cloud-based com
 
 Simulate spear phishing campaigns through a dedicated interface for creating, managing, and tracking phishing scenarios during authorized security assessments. The module enables operators to evaluate user awareness and emulate phishing based attack techniques as part of adversary simulation exercises.
 
-<img width="1340" height="562" alt="616869182-80c361fc-c25c-40d0-8e47-cc0a4dea6325" src="https://github.com/user-attachments/assets/f6da7972-5f8b-45a8-9c09-0749290bbe73" />
+<img width="1340" height="562" alt="7" src="https://github.com/user-attachments/assets/ceeeee51-bb6c-4e90-b84a-a9c4397cae3a" />
+
 
 
 ## 🔗 Host File
@@ -113,7 +118,7 @@ Simulate spear phishing campaigns through a dedicated interface for creating, ma
 Host and distribute files through a dedicated interface with configurable server settings, download tracking, and detailed access logging. Designed to simplify controlled file delivery and monitor client download activity.
 
 <p align="center">
-  <img width="774" height="511" alt="Screenshot From 2026-07-03 09-18-06" src="https://github.com/user-attachments/assets/098f1774-dc84-40f0-a84c-ceabb75fcdcd" />
+  <img width="774" height="511" alt="Screenshot From 2026-07-03 09-18-06" src="https://github.com/user-attachments/assets/0c8dcf87-1f29-4c9d-bfc8-6f6d78f69f64" />
 </p>
 
 
@@ -122,7 +127,7 @@ Host and distribute files through a dedicated interface with configurable server
 The **Script Obfuscator** provides a comprehensive obfuscation engine for PowerShell payloads. It includes variable and function renaming, string encryption, junk code insertion, multi layer obfuscation, anti debugging techniques, and XOR based payload encryption. These features increase analysis complexity, reduce script readability, and make reverse engineering significantly more difficult while helping payloads better withstand static analysis.
 
 <p align="center">
-  <img width="599" height="420" alt="Script Obfuscator" src="https://github.com/user-attachments/assets/44bd087f-7ca0-4676-8a6c-ad03b52439f2" />
+  <img width="599" height="420" alt="Script Obfuscator" src="https://github.com/user-attachments/assets/44c340c2-8f9b-43a3-a4d7-1cb00428bceb" />
 </p>
 
 
