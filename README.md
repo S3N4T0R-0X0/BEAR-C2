@@ -14,7 +14,10 @@ BEAR-C2 is an adversary simulation and emulation framework built around real wor
 ## 🏗 Install dependencies and Usage:
 
 ```bash
-pip install customtkinter Pillow pyperclip requests flask werkzeug aioquic pycryptodome cryptography telethon python BEAR-C2.py
+chmod +x requirements.sh
+
+./BEAR-C2
+
 ```
 ---
 
