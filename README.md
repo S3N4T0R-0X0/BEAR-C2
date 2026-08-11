@@ -15,10 +15,9 @@ BEAR-C2 is an adversary simulation and emulation framework built around real wor
 ## 🏗 Install dependencies and Usage:
 
 ```bash
-chmod +x requirements.sh
+chmod +x requirements.sh && ./requirements.sh
 
 ./BEAR-C2
-
 ```
 ---
 
