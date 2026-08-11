@@ -1,4 +1,4 @@
-# Offensive Primitives
+# Adversary Primitives
 
 This directory contains a collection of offensive primitives, reusable code snippets, and deployment components developed and used throughout multiple adversary simulation engagements.
 
@@ -6,4 +6,8 @@ These components served as building blocks for simulating the tradecraft of vari
 
 The content includes a variety of implementation examples such as process injection, DLL loading, persistence mechanisms, HTML smuggling, ClickFix, SharePoint templates, scripting utilities, and other reusable techniques that supported different phases of offensive operations.
 
+---
+
 > **Note:** These primitives are not intended to represent complete attack chains. Instead, they are individual components that were reused, adapted, and combined during the development and execution of adversary simulation scenarios.
+
+---
