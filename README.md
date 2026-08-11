@@ -88,7 +88,7 @@ This phase focuses on demonstrating how a trusted cloud messaging platform can s
 
 <img width="1276" height="585" alt="5" src="https://github.com/user-attachments/assets/751c6afa-a2fb-45f7-9d99-efcf554f78d8" />
 
-
+---
 
 ### (Discord-based Agent)
 
