@@ -82,11 +82,16 @@ Configure per-session exfiltration settings for supported cloud storage provider
 
 BEAR C2 supports operator notifications and basic command relay through **Telegram** using the `telethon` library. Configure your API ID, API hash, phone number, and bot username in the Authentication settings to enable Telegram integration for operator notifications and command relay.
 
+<img width="1276" height="585" alt="5" src="https://github.com/user-attachments/assets/751c6afa-a2fb-45f7-9d99-efcf554f78d8" />
+
+
 The initial objective of this stage is to enhance the realism of the adversary simulation by replacing the traditional direct command and control communication channel with a Telegram-based communication layer. Instead of requiring operators to interact with the payload through a dedicated control server, commands are exchanged through a Telegram bot, allowing the simulation to emulate an alternative communication workflow commonly observed in modern threat campaigns.
+
+<img width="1276" height="585" alt="New Project(2)" src="https://github.com/user-attachments/assets/ac975e38-67d5-42d5-b3d3-14ac192672db" />
+
 
 This phase focuses on demonstrating how a trusted cloud messaging platform can serve as an intermediary communication channel between the operator and the simulated implant. By leveraging Telegram as the transport layer, the simulation highlights how legitimate online services may be used to blend command and control traffic with normal network activity while maintaining reliable bidirectional communication.
 
-<img width="1276" height="585" alt="5" src="https://github.com/user-attachments/assets/751c6afa-a2fb-45f7-9d99-efcf554f78d8" />
 
 ---
 
