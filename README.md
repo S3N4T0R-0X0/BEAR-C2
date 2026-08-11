@@ -95,17 +95,16 @@ This phase focuses on demonstrating how a trusted cloud messaging platform can s
 
 This stage replaces the traditional command and control communication channel with a **Discord-based communication layer** using the **Discord Gateway API**. Instead of relying on dedicated servers, fixed IP addresses, or custom domains, operators communicate with the simulated implant through a private Discord channel.
 
-<img width="1276" height="585" alt="New Project(1)" src="https://github.com/user-attachments/assets/a70ee95a-2850-43b7-804c-0fc1f6f0c74a" />
 
+<img width="1276" height="577" alt="6" src="https://github.com/user-attachments/assets/e0232e1c-725e-486d-925d-9172c7dd5c06" />
 
 
 The implant maintains a persistent connection to the Discord Gateway to receive operator tasking in near real time, while command results are returned through the Discord API. This demonstrates how trusted cloud communication platforms can be leveraged as alternative transport layers for command and control.
 
 The objective is to provide a realistic environment for studying cloud-based communication patterns and to emphasize behavioral detection over destination-based detection.
 
-<img width="1276" height="577" alt="6" src="https://github.com/user-attachments/assets/e0232e1c-725e-486d-925d-9172c7dd5c06" />
 
-
+<img width="1276" height="585" alt="New Project(1)" src="https://github.com/user-attachments/assets/a70ee95a-2850-43b7-804c-0fc1f6f0c74a" />
 
 ---
 
