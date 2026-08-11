@@ -130,6 +130,17 @@ echo "[*] Running syntax check..."
 echo "[+] Syntax check passed."
 
 # ------------------------------------------------
+# Check image folder
+# ------------------------------------------------
+
+IMAGE_DIR="image"
+if [[ -d "$IMAGE_DIR" ]]; then
+    echo "[+] Image folder '$IMAGE_DIR' found – will be bundled."
+else
+    echo "[!] Warning: Image folder '$IMAGE_DIR' not found – the executable may lack visual assets."
+fi
+
+# ------------------------------------------------
 # Clean previous build
 # ------------------------------------------------
 
@@ -139,15 +150,16 @@ echo "[*] Cleaning previous PyInstaller output..."
 rm -rf build dist
 
 # ------------------------------------------------
-# Build
+# Build executable (bundle image folder)
 # ------------------------------------------------
 
 echo
-echo "[*] Building executable..."
+echo "[*] Building executable with embedded resources..."
 
 "$PYTHON" -m PyInstaller \
     --onefile \
     --clean \
+    --add-data "image:image" \
     "$APP"
 
 # ------------------------------------------------
@@ -179,8 +191,9 @@ echo "[*] Cleaning build artifacts..."
 rm -rf build
 rm -rf dist
 rm -rf __pycache__
-rm -rf BEAR-C2.py
+rm -rf "$IMAGE_DIR"          
 rm -f "${APP%.py}.spec"
+rm -rf BEAR-C2.py
 
 # ------------------------------------------------
 # Finished
