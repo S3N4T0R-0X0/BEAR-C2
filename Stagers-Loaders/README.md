@@ -2,7 +2,7 @@
 
 This directory contains a collection of research materials, samples, and experimental components developed or used during previous adversary simulation and offensive security research activities.
 
-The contents represent different experiments, proof-of-concept work, agent samples, and research artifacts explored as part of security testing and simulation exercises.
+The contents represent different experiments, proof of concept work, agent samples, and research artifacts explored as part of security testing and simulation exercises.
 
 Some of the materials are based on techniques observed in real-world threat activity, while others were developed as part of independent research and experimentation.
 
