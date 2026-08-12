@@ -80,7 +80,10 @@ Configure per-session exfiltration settings for supported cloud storage provider
 
 ### (Telegram-based Agent)
 
-BEAR C2 supports operator notifications and basic command relay through **Telegram** using the `telethon` library. Configure your API ID, API hash, phone number, and bot username in the Authentication settings to enable Telegram integration for operator notifications and command relay.
+BEAR C2 supports operator notifications and basic command relay through **Telegram** using the `telethon` library. Configure your API ID, API hash, phone number, and bot username in the Authentication settings to enable 
+[Telegram integration](https://github.com/S3N4T0R-0X0/APTs-Adversary-Simulation/tree/main/Iranian%20APT/Charming%20Kitten#the-third-stage-telegram-based-agent). for operator notifications and command relay.
+
+
 
 <img width="1276" height="585" alt="5" src="https://github.com/user-attachments/assets/751c6afa-a2fb-45f7-9d99-efcf554f78d8" />
 
