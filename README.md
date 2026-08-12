@@ -24,7 +24,7 @@ chmod +x requirements.sh && ./requirements.sh
 
 ## 🧠 The Challenge with Adversary Simulation:
 
-Accurately replicating **APT techniques** requires a `flexible environment capable of mimicking encryption methods, exfiltration techniques, and connection protocols` used in modern intrusions. However, achieving this level of precision has always been a challenge.
+Accurately replicating **APT techniques** requires a `flexible environment capable of mimicking connection protocols, encryption methods, exfiltration techniques, and C2 Channels/Profiles` used in modern intrusions. However, achieving this level of precision has always been a challenge.
 
 <img width="1366" height="745" alt="2" src="https://github.com/user-attachments/assets/ff10c9a6-1441-4adb-8fe1-eb10b7049f18" />
 
