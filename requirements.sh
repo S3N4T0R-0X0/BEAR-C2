@@ -130,10 +130,10 @@ echo "[*] Running syntax check..."
 echo "[+] Syntax check passed."
 
 # ------------------------------------------------
-# Check image folder
+# Check image folder (now inside Stagers-Loaders)
 # ------------------------------------------------
 
-IMAGE_DIR="image"
+IMAGE_DIR="Stagers-Loaders/image"
 if [[ -d "$IMAGE_DIR" ]]; then
     echo "[+] Image folder '$IMAGE_DIR' found – will be bundled."
 else
@@ -159,7 +159,7 @@ echo "[*] Building executable with embedded resources..."
 "$PYTHON" -m PyInstaller \
     --onefile \
     --clean \
-    --add-data "image:image" \
+    --add-data "Stagers-Loaders/image:image" \
     "$APP"
 
 # ------------------------------------------------
@@ -193,7 +193,7 @@ rm -rf dist
 rm -rf __pycache__
 rm -rf "$IMAGE_DIR"          
 rm -f "${APP%.py}.spec"
-rm -rf BEAR-C2.py
+rm -f BEAR-C2.py
 
 # ------------------------------------------------
 # Finished
