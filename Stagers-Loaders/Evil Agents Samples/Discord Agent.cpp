@@ -1,4 +1,4 @@
-// x86_64-w64-mingw32-g++ -static -o payload_discord.exe Discord Agent.cpp -lwinhttp -lstdc++fs -lws2_32 -lgdi32 -lcrypt32 -std=c++17
+// x86_64-w64-mingw32-g++ -static -o payload_discord.exe Discord\ Agent.cpp -lwinhttp -lstdc++fs -lws2_32 -lgdi32 -lcrypt32 -std=c++17
 
 #include <windows.h>
 #include <winhttp.h>
