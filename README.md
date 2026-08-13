@@ -56,7 +56,7 @@ This version features a full GUI that streamlines adversary simulation operation
 | **Malleable C2 Profiles** | Support for community `Malleable C2 profiles` for flexible network traffic simulation |
 | **Stagers & Loaders** | Automated stager and loader techniques designed for APTs adversary simulation |
 | **Integrated Tooling** | Built-in script obfuscator, phishing toolkit, and file hosting |
-| **TLS Certificate Generation** | Self-signed TLS certificates mimicking trusted vendors (e.g., Google LLC) |
+| **TLS Certificate Generation** | Self-signed TLS certificates mimicking trusted vendors |
 | **HTTP Customization** | Base64 URL encoding and custom HTTP headers for both client and server communication |
 | **Real-time Session Manager** | Live status tracking, session monitoring, and real‑time update capabilities |
 | **Custom Naming & URI Paths** | User‑defined campaign names and configurable URI paths for operational flexibility |
