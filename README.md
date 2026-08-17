@@ -1,4 +1,5 @@
-# BEAR-C2 [![Project Status](https://img.shields.io/badge/Status-BETA-yellow?style=flat-square)]() [![Adversary Simulation](https://img.shields.io/badge/Adversary-Simulation-purple?style=flat-square)]() [![TTPs](https://img.shields.io/badge/TTPs-Emulation-blue?style=flat-square)]() [![APT Simulation](https://img.shields.io/badge/Red-Team-darkred?style=flat-square)]() [![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-orange?style=flat-square)]()  [![Red Team](https://img.shields.io/badge/APT-groups-red?style=flat-square)]()
+# BEAR-C2 Adversary Simulation Framework
+[![Project Status](https://img.shields.io/badge/Status-BETA-yellow?style=flat-square)]() [![Adversary Simulation](https://img.shields.io/badge/Adversary-Simulation-purple?style=flat-square)]() [![TTPs](https://img.shields.io/badge/TTPs-Emulation-blue?style=flat-square)]() [![APT Simulation](https://img.shields.io/badge/Red-Team-darkred?style=flat-square)]() [![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-orange?style=flat-square)]()  [![Red Team](https://img.shields.io/badge/APT-groups-red?style=flat-square)]()
 
 ---
 
