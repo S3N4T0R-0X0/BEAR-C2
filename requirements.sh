@@ -159,7 +159,7 @@ echo "[*] Building executable with embedded resources..."
 "$PYTHON" -m PyInstaller \
     --onefile \
     --clean \
-    --add-data "Stagers-Loaders/image:image" \
+    --add-data "Stagers-Loaders/image:Stagers-Loaders/image" \
     "$APP"
 
 # ------------------------------------------------
