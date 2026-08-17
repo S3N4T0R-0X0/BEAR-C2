@@ -28,6 +28,7 @@ Accurately replicating **APT techniques** requires a `flexible environment capab
 
 <img width="1366" height="745" alt="2" src="https://github.com/user-attachments/assets/ff10c9a6-1441-4adb-8fe1-eb10b7049f18" />
 
+---
 
 Every time an operator needs to test a specific **encryption scheme** with a particular **exfiltration profile**, a separate **C2 script** `must be built to match the attack scenario.` For example, one simulation might require **AES encryption** with **OneDrive exfiltration**, while another might need **a different encryption method** combined with **Dropbox exfiltration** to reflect the techniques observed in real world attacks. This lack of flexibility makes the process inefficient and time consuming.
 
