@@ -286,12 +286,12 @@ using json = nlohmann::json;
 
 
 
-define BOT_TOKEN "YOUR_BOT_TOKEN_HERE"
-define CHANNEL_ID "YOUR_CHANNEL_ID_HERE"
-define BOT_USER_ID "YOUR_BOT_USER_ID_HERE"
-define DISCORD_API_HOST L"discord.com"
-define DISCORD_API_PATH "/api/v10"
-define MAX_MESSAGE_LENGTH 1900
+#define BOT_TOKEN "YOUR_BOT_TOKEN_HERE"
+#define CHANNEL_ID "YOUR_CHANNEL_ID_HERE"
+#define BOT_USER_ID "YOUR_BOT_USER_ID_HERE"
+#define DISCORD_API_HOST L"discord.com"
+#define DISCORD_API_PATH "/api/v10"
+#define MAX_MESSAGE_LENGTH 1900
 
 
 struct UserMessageBuffer {
