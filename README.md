@@ -26,7 +26,7 @@ chmod +x requirements.sh && ./requirements.sh
 
 Accurately replicating **APT techniques** requires a `flexible environment capable of mimicking connection protocols, encryption methods, exfiltration techniques, and C2 Channels/Profiles` used in modern intrusions. However, achieving this level of precision has always been a challenge.
 
-<img width="1366" height="745" alt="2" src="https://github.com/user-attachments/assets/ff10c9a6-1441-4adb-8fe1-eb10b7049f18" />
+<img width="1366" height="732" alt="Screenshot From 2026-08-18 00-08-54" src="https://github.com/user-attachments/assets/1667995b-6ecf-4a32-91de-808743939531" />
 
 ---
 
