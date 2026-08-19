@@ -38,6 +38,10 @@ Every time an operator needs to test a specific **encryption scheme** with a par
 
 This is why **BEAR C2** was developed to provide **adversary simulation** with full customization through the new listener, allowing seamless configuration of  `connection protocols, encryption, exfiltration,` and automated loading techniques. This ensures that simulations can accurately reflect real **APT intrusions** without the need to build custom scripts for every scenario.
 
+---
+
+The Listeners Table provides a centralized overview of all active and configured C2 listeners. It displays essential details such as listener name, address, network protocol, encryption method, exfiltration profile, and current status (Active or Stopped/Disconnected). From this interface, operators can start, stop, rename, or remove listeners with ease. It also offers quick access to encryption keys and authentication IDs for managing beacon communication. This table serves as the command hub for orchestrating and monitoring your C2 infrastructure.
+
 ## 📋 What's New in This Version
 
 This version features a full GUI that streamlines adversary simulation operations through centralized listener management, real-time session tracking, customizable communication profiles, integrated exfiltration workflows, and flexible operator controls for efficient engagement management.
