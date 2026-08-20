@@ -41,6 +41,9 @@ This is why **BEAR C2** was developed to provide **adversary simulation** with f
 
 The Listeners Table provides a centralized overview of all active and configured C2 listeners. It displays essential details such as **listener name, address, network protocol, encryption method, exfiltration profile**, and current status (Active or Stopped/Disconnected). From this interface, operators can start, stop, rename, or remove listeners with ease. It also offers quick access to encryption keys and authentication IDs for managing beacon communication. This table serves as the command hub for orchestrating and monitoring your C2 infrastructure.
 
+<img width="999" height="481" alt="photo_2026-08-19_20-12-25" src="https://github.com/user-attachments/assets/a2f3dfe0-6085-4d95-b057-e7b9746d96ea" />
+
+
 ## 📋 What's New in This Version
 
 This version features a full GUI that streamlines adversary simulation operations through centralized listener management, real-time session tracking, customizable communication profiles, integrated exfiltration workflows, and flexible operator controls for efficient engagement management.
