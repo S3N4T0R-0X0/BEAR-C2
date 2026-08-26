@@ -1,58 +1,59 @@
-BEAR C2 Educational & Research License (v2.0)
+BEAR C2 Educational & Research License
+Version 2.0
 
-Copyright (c) 2026
-ABDULREHMAN ALI (S3N4T0R-0X0)
+Copyright (c) 2026 ABDULREHMAN ALI (S3N4T0R-0X0)
 All Rights Reserved.
 
-Permission is granted to download, use, and study this software solely for educational, research, and authorized adversary simulation purposes, subject to the following conditions.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, study, and modify the Software solely for the purposes set forth below, subject to the following conditions:
 
-1. Permitted Use
+1. Permitted Uses
 
-This project may be used for:
+The Software may be used only for the following purposes:
 
-- Educational and training purposes.
-- Security research.
-- Authorized adversary simulation.
-- Red team laboratory environments.
-- Proof of Concept (PoC) demonstrations.
-- Academic publications and research with proper attribution.
+- Educational and training activities
+- Independent security research
+- Authorized adversary simulation and red-team exercises
+- Controlled laboratory environments
+- Proof-of-concept (PoC) demonstrations
+- Academic publications and research (with proper attribution)
 
 2. Attribution
 
-Any publication, presentation, research paper, blog post, or derivative educational work that references this project must include attribution to:
+Any publication, presentation, research paper, blog post, video, or derivative educational work that references, incorporates, or is based on this Software must include clear attribution to:
 
-ABDULREHMAN ALI (S3N4T0R-0X0)
+    ABDULREHMAN ALI (S3N4T0R-0X0)
 
-and provide a link to the original GitHub repository.
+and must include a link to the original GitHub repository.
 
 3. Restrictions
 
-You may NOT:
+You may not:
 
-- Use this project in unauthorized or illegal activities.
-- Re-upload or mirror this repository on another source code hosting platform without written permission.
-- Remove copyright notices or attribution.
-- Redistribute modified versions while claiming original authorship.
-- Sell, sublicense, or commercially distribute this software without prior written permission.
+- Use the Software for any unauthorized, illegal, or malicious activity
+- Deploy the Software against systems or networks without explicit prior authorization
+- Re-upload, mirror, or redistribute the Software (in original or modified form) on any other source-code hosting platform without prior written permission from the copyright holder
+- Remove, alter, or obscure any copyright notices, license terms, or attribution
+- Redistribute modified versions while claiming original authorship
+- Sell, sublicense, rent, lease, or commercially distribute the Software or any derivative work without prior written permission
 
 4. Commercial Use
 
-Commercial use of this project, including integration into commercial products, consulting services, paid training, or commercial security platforms, requires prior written permission from the copyright holder.
+Any commercial use of the Software — including but not limited to integration into commercial products, paid consulting services, commercial training programs, or commercial security platforms — requires prior written permission from the copyright holder.
 
-5. Disclaimer
+5. Disclaimer of Warranty
 
-This software is provided "AS IS", without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
 
-The author shall not be liable for any claim, damages, losses, or other liability arising from the use, misuse, or inability to use this software.
+IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-6. Responsibility
+6. Responsibility and Compliance
 
-Users are solely responsible for ensuring that their use of this software complies with all applicable laws, regulations, organizational policies, and authorization requirements.
+Users are solely responsible for ensuring that their use of the Software complies with all applicable local, national, and international laws, regulations, organizational policies, and authorization requirements.
 
-The author assumes no responsibility for misuse or unauthorized deployment of this software.
+The copyright holder assumes no responsibility or liability for any misuse, unauthorized deployment, or illegal use of the Software.
 
 7. Acceptance
 
-By downloading, using, modifying, or accessing this software, you acknowledge that you have read, understood, and agreed to the terms of this license.
+By downloading, using, modifying, or accessing the Software, you acknowledge that you have read, understood, and agree to be bound by the terms of this License.
 
-For licensing inquiries or commercial permissions, please contact the project author.
+For licensing inquiries or commercial permissions, please contact the copyright holder.
