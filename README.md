@@ -86,21 +86,15 @@ Configure per-session exfiltration settings for supported cloud storage provider
 
 ### (Telegram-based Agent)
 
-BEAR C2 supports operator notifications and basic command relay through **Telegram** using the `telethon` library. Configure your API ID, API hash, phone number, and bot username in the Authentication settings to enable 
-[Telegram integration](https://github.com/S3N4T0R-0X0/APTs-Adversary-Simulation/tree/main/Iranian%20APT/Charming%20Kitten#the-third-stage-telegram-based-agent). for operator notifications and command relay.
-
-
+The Telegram communication layer uses a Telegram bot as the intermediary between the C2 server and the payload. The C2 server authenticates to the Telegram account using the configured API ID, API Hash, and Phone Number, then connects to the previously created Telegram bot through that account
 
 <img width="1276" height="585" alt="5" src="https://github.com/user-attachments/assets/751c6afa-a2fb-45f7-9d99-efcf554f78d8" />
 
 
-The initial objective of this stage is to enhance the realism of the adversary simulation by replacing the traditional direct command and control communication channel with a Telegram-based communication layer. Instead of requiring operators to interact with the payload through a dedicated control server, commands are exchanged through a Telegram bot, allowing the simulation to emulate an alternative communication workflow commonly observed in modern threat campaigns.
+
+The bot's Bot Token is embedded in the payload, allowing the payload to communicate with the bot through the Telegram API. Commands are sent from the C2 server to the bot, and the bot forwards them to the payload, which executes the received tasking and returns the results through the same communication path. This creates a bidirectional command and control channel using Telegram as the communication layer.
 
 <img width="1276" height="585" alt="New Project(2)" src="https://github.com/user-attachments/assets/ac975e38-67d5-42d5-b3d3-14ac192672db" />
-
-
-This phase focuses on demonstrating how a trusted cloud messaging platform can serve as an intermediary communication channel between the operator and the simulated implant. By leveraging Telegram as the transport layer, the simulation highlights how legitimate online services may be used to blend command and control traffic with normal network activity while maintaining reliable bidirectional communication.
-
 
 ---
 
