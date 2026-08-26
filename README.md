@@ -131,7 +131,8 @@ Simulate spear phishing campaigns through a dedicated interface for creating, ma
 
 ## 🔗 Host File
 
-Host and distribute files through a dedicated interface with configurable server settings, download tracking, and detailed access logging. Designed to simplify controlled file delivery and monitor client download activity.
+Host and distribute files through a dedicated **Host File** interface with configurable server settings and automated file delivery. Hosted files are automatically loaded when accessed, without requiring user interaction or a manual download prompt. The interface provides centralized file hosting and delivery management for controlled adversary simulation and authorized security testing workflows.
+
 
 <p align="center">
   <img width="774" height="511" alt="Screenshot From 2026-07-03 09-18-06" src="https://github.com/user-attachments/assets/0c8dcf87-1f29-4c9d-bfc8-6f6d78f69f64" />
