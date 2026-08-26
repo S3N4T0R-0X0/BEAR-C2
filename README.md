@@ -140,7 +140,8 @@ Host and distribute files through a dedicated interface with configurable server
 
 ## 🔐 Script Obfuscator
 
-The **Script Obfuscator** provides a comprehensive obfuscation engine for PowerShell payloads. It includes variable and function renaming, string encryption, junk code insertion, multi layer obfuscation, anti debugging techniques, and XOR based payload encryption. These features increase analysis complexity, reduce script readability, and make reverse engineering significantly more difficult while helping payloads better withstand static analysis.
+The **Script Obfuscator** provides a comprehensive obfuscation engine supporting **PS1, BAT, HTML, VBS, JS, and PY** payloads with multiple configurable obfuscation layers. It includes `variable and function renaming, string encryption, junk code insertion, multi-layer obfuscation, anti-debugging techniques, and XOR-based payload encryption.` These features increase analysis complexity, reduce script readability, and make reverse engineering significantly more difficult while helping payloads better withstand static analysis.
+
 
 <p align="center">
   <img width="599" height="420" alt="Script Obfuscator" src="https://github.com/user-attachments/assets/44c340c2-8f9b-43a3-a4d7-1cb00428bceb" />
