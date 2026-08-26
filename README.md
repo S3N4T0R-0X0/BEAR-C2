@@ -123,7 +123,7 @@ The objective is to provide a realistic environment for studying cloud-based com
 
 ## 🪝 Spear Phishing Simulation
 
-Simulate spear phishing campaigns through a dedicated interface for creating, managing, and tracking phishing scenarios during authorized security assessments. The module enables operators to evaluate user awareness and emulate phishing based attack techniques as part of adversary simulation exercises.
+Simulate spear-phishing campaigns through a dedicated interface for configuring and managing phishing scenarios during authorized adversary simulation exercises. The module provides campaign controls such as **victim submission limits**, configurable phishing parameters, and session management, allowing operators to control campaign behavior and evaluate user interaction with simulated phishing scenarios. It is designed to support controlled phishing assessments while providing operators with greater visibility and control over campaign execution.
 
 <img width="1340" height="562" alt="7" src="https://github.com/user-attachments/assets/ceeeee51-bb6c-4e90-b84a-a9c4397cae3a" />
 
