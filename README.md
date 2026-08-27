@@ -1,10 +1,11 @@
 # BEAR-C2 Adversary Simulation Framework
-[![Project Status](https://img.shields.io/badge/Status-BETA-yellow?style=flat-square)]()  [![verigen: 2.0](https://img.shields.io/badge/verigen-2.0-green?style=flat-square)](https://img.shields.io/badge/verigen-2.0-green?style=flat-square) [![Adversary Simulation](https://img.shields.io/badge/Adversary-Simulation-purple?style=flat-square)]() [![TTPs](https://img.shields.io/badge/TTPs-Emulation-blue?style=flat-square)]() [![APT Simulation](https://img.shields.io/badge/Red-Team-darkred?style=flat-square)]() [![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-orange?style=flat-square)]() [![Linux](https://img.shields.io/badge/Platform-Linux-black?style=flat-square)](https://img.shields.io/badge/Platform-Linux-black?style=flat-square)
 ---
+ [![Project Status](https://img.shields.io/badge/Status-BETA-yellow?style=flat-square)]()  [![verigen: 2.0](https://img.shields.io/badge/verigen-2.0-green?style=flat-square)](https://img.shields.io/badge/verigen-2.0-green?style=flat-square) [![Adversary Simulation](https://img.shields.io/badge/Adversary-Simulation-purple?style=flat-square)]() [![TTPs](https://img.shields.io/badge/TTPs-Emulation-blue?style=flat-square)]() [![APT Simulation](https://img.shields.io/badge/Red-Team-darkred?style=flat-square)]() [![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-orange?style=flat-square)]() [![Linux](https://img.shields.io/badge/Platform-Linux-black?style=flat-square)](https://img.shields.io/badge/Platform-Linux-black?style=flat-square)
 
 BEAR-C2 is an adversary simulation and emulation framework built around real world TTPs inspired by `Russian, Chinese, North Korean, and Iranian APT groups.` It provides a flexible environment for diverse engagement scenarios and delivers a realistic foundation for red team operations and adversary emulation drawing from related simulation research in the [APT Attack Simulation Repository](https://github.com/S3N4T0R-0X0/APT-Attack-Simulation). It supports defense evasion techniques and multiple encryption options for accurate representation of real world intrusion scenarios.
 
 ---
+
 
 <img width="1735" height="906" alt="1" src="https://github.com/user-attachments/assets/11b96e6d-c47a-43d2-a579-831d73b7980b" />
 
