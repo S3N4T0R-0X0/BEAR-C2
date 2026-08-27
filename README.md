@@ -95,7 +95,8 @@ The Telegram communication layer uses a [Telegram bot](https://github.com/S3N4T0
 
 The bot's Bot Token is embedded in the payload, allowing the payload to communicate with the bot through the Telegram API. Commands are sent from the C2 server to the bot, and the bot forwards them to the payload, which executes the received tasking and returns the results through the same communication path. This creates a bidirectional command and control channel using Telegram as the communication layer.
 
-<img width="1276" height="585" alt="New Project(2)" src="https://github.com/user-attachments/assets/ac975e38-67d5-42d5-b3d3-14ac192672db" />
+<img width="1920" height="1080" alt="telegram" src="https://github.com/user-attachments/assets/3390bbe7-775f-498e-9526-f611762c16ce" />
+
 
 ---
 
@@ -112,7 +113,8 @@ The Discord communication layer uses two Discord bots connected through the same
 Since Discord does not allow bots to directly communicate with other bots, using a shared channel provides the communication path between the two sides.
 
 
-<img width="1276" height="585" alt="New Project(1)" src="https://github.com/user-attachments/assets/a70ee95a-2850-43b7-804c-0fc1f6f0c74a" />
+<img width="1920" height="1080" alt="discord" src="https://github.com/user-attachments/assets/124698a5-e8f3-4a01-aca8-4b01f5d411e1" />
+
 
 ---
 
