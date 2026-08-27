@@ -118,7 +118,7 @@ The Discord communication layer uses two Discord bots connected through the same
 Since Discord does not allow bots to directly communicate with other bots, using a shared channel provides the communication path between the two sides.
 
 
-<img width="1920" height="1080" alt="discord" src="https://github.com/user-attachments/assets/124698a5-e8f3-4a01-aca8-4b01f5d411e1" />
+<img width="3472" height="1784" alt="discord" src="https://github.com/user-attachments/assets/439f79ae-58ed-4846-b332-ab567d0c0e78" />
 
 
 ---
