@@ -100,7 +100,7 @@ The Telegram communication layer uses a [Telegram bot](https://github.com/S3N4T0
 
 The bot's Bot Token is embedded in the payload, allowing the payload to communicate with the bot through the Telegram API. Commands are sent from the C2 server to the bot, and the bot forwards them to the payload, which executes the received tasking and returns the results through the same communication path. This creates a bidirectional command and control channel using Telegram as the communication layer.
 
-<img width="1920" height="1080" alt="telegram" src="https://github.com/user-attachments/assets/3390bbe7-775f-498e-9526-f611762c16ce" />
+<img width="1736" height="893" alt="Telegram" src="https://github.com/user-attachments/assets/8cdcf611-95c7-4f9c-ae78-b6230e3cbc91" />
 
 
 ---
