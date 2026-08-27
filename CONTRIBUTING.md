@@ -5,7 +5,7 @@ Thank you for your interest in contributing to **BEAR-C2**!
 BEAR-C2 is an **adversary simulation and emulation framework** designed for educational, research, and authorized red-team / adversary simulation purposes only.  
 It is inspired by real-world TTPs from Russian, Chinese, North Korean, and Iranian APT groups.
 
-By contributing, you agree to follow the guidelines below and the terms of the [BEAR C2 Educational & Research License](License).
+By contributing, you agree to follow the guidelines below and the terms of the [BEAR C2 Educational & Research License](https://github.com/S3N4T0R-0X0/BEAR-C2/blob/main/LICENSE).
 
 ---
 
@@ -99,7 +99,7 @@ Key points:
 - No unauthorized / malicious use
 - No redistribution or commercial use without prior written permission
 
-Full license text is available in the [License](License) file.
+Full license text is available in the [License](https://github.com/S3N4T0R-0X0/BEAR-C2/blob/main/LICENSE) file.
 
 ---
 
