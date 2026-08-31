@@ -7,7 +7,7 @@ BEAR-C2 is an adversary simulation and emulation framework built around real wor
 ---
 
 
-<img width="1735" height="906" alt="1" src="https://github.com/user-attachments/assets/11b96e6d-c47a-43d2-a579-831d73b7980b" />
+<img width="1735" height="906" alt="image psd(1)" src="https://github.com/user-attachments/assets/cbbd263e-951e-4ee5-9049-9f238aad0ddb" />
 
 
 > [!CAUTION]
