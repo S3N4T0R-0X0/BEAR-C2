@@ -90,12 +90,6 @@ The project owner will follow these guidelines when determining consequences for
 
 ---
 
-## Attribution
-
-This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, with additional project-specific rules tailored to the educational and research nature of BEAR-C2.
-
----
-
 ## Contact
 
 For questions about this Code of Conduct, contact the project owner:
