@@ -31,7 +31,7 @@ chmod +x requirements.sh && ./requirements.sh
 
 Accurately replicating **APT techniques** requires a `flexible environment capable of mimicking connection protocols, encryption methods, exfiltration techniques, and C2 Channels/Profiles` used in modern intrusions. However, achieving this level of precision has always been a challenge.
 
-<img width="1366" height="732" alt="background" src="https://github.com/user-attachments/assets/c8239c36-ca60-4d95-bb63-7809e32ab4bd" />
+<img width="1366" height="732" alt="main " src="https://github.com/user-attachments/assets/2169f618-3255-4c15-a2be-af0c0d8dfd43" />
 
 
 Every time an operator needs to test a specific **encryption scheme** with a particular **exfiltration profile**, a separate **C2 script** `must be built to match the attack scenario.` For example, one simulation might require **AES encryption** with **OneDrive exfiltration**, while another might need **a different encryption method** combined with **Dropbox exfiltration** to reflect the techniques observed in real world attacks. This lack of flexibility makes the process inefficient and time consuming.
