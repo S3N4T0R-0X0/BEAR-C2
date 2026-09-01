@@ -36,8 +36,7 @@ Accurately replicating **APT techniques** requires a `flexible environment capab
 
 Every time an operator needs to test a specific **encryption scheme** with a particular **exfiltration profile**, a separate **C2 script** `must be built to match the attack scenario.` For example, one simulation might require **AES encryption** with **OneDrive exfiltration**, while another might need **a different encryption method** combined with **Dropbox exfiltration** to reflect the techniques observed in real world attacks. This lack of flexibility makes the process inefficient and time consuming.
 
-
-<img width="1359" height="679" alt="3" src="https://github.com/user-attachments/assets/30cf94aa-2f99-4f16-8469-c1379a0d84e2" />
+<img width="1359" height="680" alt="Screenshot From 2026-09-01 05-54-48" src="https://github.com/user-attachments/assets/339e099d-34ff-4ed0-9660-4c91f108ab29" />
 
 
 This is why **BEAR C2** was developed to provide **adversary simulation** with full customization through the new listener, allowing seamless configuration of  `connection protocols, encryption, exfiltration,` and automated loading techniques. This ensures that simulations can accurately reflect real **APT intrusions** without the need to build custom scripts for every scenario.
