@@ -16,9 +16,7 @@ BEAR-C2 is an adversary simulation and emulation framework built around real wor
 ## 🏗 Install dependencies and Usage:
 
 ```bash
-git clone https://github.com/S3N4T0R-0X0/BEAR-C2.git
-
-cd BEAR-C2
+git clone https://github.com/S3N4T0R-0X0/BEAR-C2.git && cd BEAR-C2
 
 chmod +x requirements.sh && ./requirements.sh
 
