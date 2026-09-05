@@ -128,12 +128,13 @@ Telegram and Discord impose a maximum character limit on individual messages exc
 
 [ Telegram ] 4096 characters maximum per message, 4000 characters configured for C2 data transfer
 
-<img width="1109" height="716" alt="photo_2026-09-05_08-26-29" src="https://github.com/user-attachments/assets/c825908e-7918-45ee-9615-2b87623c4371" />
+
+<img width="1280" height="557" alt="photo_2026-09-05_08-40-22" src="https://github.com/user-attachments/assets/1702ea7f-1cd5-45c9-99f5-f2dc2531b7e6" />
 
 
 [ Discord ] 2000 characters maximum per message, 1400 characters configured for C2 data transfer
 
-<img width="1280" height="582" alt="photo_2026-09-05_08-28-39" src="https://github.com/user-attachments/assets/732f316e-d6f3-4acd-a2ea-7ec9c9c479f4" />
+<img width="1280" height="552" alt="photo_2026-09-05_08-41-54" src="https://github.com/user-attachments/assets/881eb8ab-0fec-4420-93be-5798631efc84" />
 
 
 The configured limits are intentionally kept below the platform limits to provide sufficient margin for the C2 message structure and encoding overhead. When the data exceeds the configured limit, the encoded data must be split into multiple messages and reconstructed by the receiving side.
