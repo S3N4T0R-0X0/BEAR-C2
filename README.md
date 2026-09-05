@@ -122,24 +122,24 @@ Since Discord does not allow bots to directly communicate with other bots, using
 
 C2 Channels introduce limitations related to data transfer and Beacon identification when using third party messaging platforms as the communication layer between the C2 Server and Beacons
 
-- Data Transfer Limitations
+**● Data Transfer Limitations**
 
 Telegram and Discord impose a maximum character limit on individual messages exchanged through their bot APIs. In BEAR C2, the C2 Channel acts as a transport layer between the C2 Server and the Beacon, so this limitation applies to the data being transferred through the channel and not to the size of the Beacon payload itself. Data sent from the C2 Server to the Beacon and data returned from the Beacon to the C2 Server may be Base64 encoded before transmission. Since Base64 increases the size of the transmitted representation, the amount of original data that can be transferred in a single message is lower than the platform character limit.
 
-[ Telegram ] 4096 characters maximum per message, 4000 characters configured for C2 data transfer
+**[ Telegram ] 4096 characters maximum per message, 4000 characters configured for C2 data transfer**
 
 
 <img width="1280" height="557" alt="photo_2026-09-05_08-40-22" src="https://github.com/user-attachments/assets/1702ea7f-1cd5-45c9-99f5-f2dc2531b7e6" />
 
 
-[ Discord ] 2000 characters maximum per message, 1400 characters configured for C2 data transfer
+**[ Discord ] 2000 characters maximum per message, 1400 characters configured for C2 data transfer**
 
 <img width="1280" height="552" alt="photo_2026-09-05_08-41-54" src="https://github.com/user-attachments/assets/881eb8ab-0fec-4420-93be-5798631efc84" />
 
 
 The configured limits are intentionally kept below the platform limits to provide sufficient margin for the C2 message structure and encoding overhead. When the data exceeds the configured limit, the encoded data must be split into multiple messages and reconstructed by the receiving side.
 
-- Beacon Identification and Response Attribution
+**● Beacon Identification and Response Attribution**
 
 C2 Channels also introduce a limitation when multiple Beacons share the same Telegram bot or Discord channel. All Beacons communicating through the same bot or channel use the same communication path, so the C2 Server cannot inherently represent each Beacon as an independent communication session. For example, if five Beacons communicate through the same Telegram bot or Discord channel, they will appear as a single C2 communication path rather than five independently identifiable Beacons.
 
@@ -149,7 +149,7 @@ The direct solution is to assign a dedicated bot to each Beacon on Telegram, or 
 
 These limitations are specific to using messaging platforms as C2 transport channels and are independent of the Beacon payload itself
 
-- Practical Impact
+**● Practical Impact**
 
 The message size limitation reduces the amount of data that can be transferred at once, which can increase the time required to send commands and receive their output
 
