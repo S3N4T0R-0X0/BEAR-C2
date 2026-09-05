@@ -128,7 +128,13 @@ Telegram and Discord impose a maximum character limit on individual messages exc
 
 [ Telegram ] 4096 characters maximum per message, 4000 characters configured for C2 data transfer
 
+<img width="1109" height="716" alt="photo_2026-09-05_08-26-29" src="https://github.com/user-attachments/assets/c825908e-7918-45ee-9615-2b87623c4371" />
+
+
 [ Discord ] 2000 characters maximum per message, 1400 characters configured for C2 data transfer
+
+<img width="1280" height="582" alt="photo_2026-09-05_08-28-39" src="https://github.com/user-attachments/assets/732f316e-d6f3-4acd-a2ea-7ec9c9c479f4" />
+
 
 The configured limits are intentionally kept below the platform limits to provide sufficient margin for the C2 message structure and encoding overhead. When the data exceeds the configured limit, the encoded data must be split into multiple messages and reconstructed by the receiving side.
 
@@ -142,7 +148,11 @@ The direct solution is to assign a dedicated bot to each Beacon on Telegram, or 
 
 These limitations are specific to using messaging platforms as C2 transport channels and are independent of the Beacon payload itself
 
+- Practical Impact
 
+The message size limitation reduces the amount of data that can be transferred at once, which can increase the time required to send commands and receive their output
+
+Using a shared Telegram bot or Discord channel causes multiple Beacons to appear as a single Beacon in the C2 table, while commands are delivered to all Beacons using that bot or channel and responses cannot be reliably attributed to a specific Beacon
 
 ---
 
