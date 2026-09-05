@@ -117,6 +117,38 @@ Since Discord does not allow bots to directly communicate with other bots, using
 
 <img width="3472" height="1784" alt="discord" src="https://github.com/user-attachments/assets/439f79ae-58ed-4846-b332-ab567d0c0e78" />
 
+---
+> ⚠️ **NOTE:** C2 Channel Limitations
+
+C2 Channels introduce limitations related to data transfer and Beacon identification when using third party messaging platforms as the communication layer between the C2 Server and Beacons
+
+Data Transfer Limitations
+
+Telegram and Discord impose a maximum character limit on individual messages exchanged through their bot APIs. In BEAR C2, the C2 Channel acts as a transport layer between the C2 Server and the Beacon, so this limitation applies to the data being transferred through the channel and not to the size of the Beacon payload itself. Data sent from the C2 Server to the Beacon and data returned from the Beacon to the C2 Server may be Base64 encoded before transmission. Since Base64 increases the size of the transmitted representation, the amount of original data that can be transferred in a single message is lower than the platform character limit.
+
+[ Telegram ]
+
+4096 characters maximum per message
+4000 characters configured for C2 data transfer
+
+[ Discord ]
+
+2000 characters maximum per message
+1400 characters configured for C2 data transfer
+
+The configured limits are intentionally kept below the platform limits to provide sufficient margin for the C2 message structure and encoding overhead. When the data exceeds the configured limit, the encoded data must be split into multiple messages and reconstructed by the receiving side.
+
+Beacon Identification and Response Attribution
+
+C2 Channels also introduce a limitation when multiple Beacons share the same Telegram bot or Discord channel. All Beacons communicating through the same bot or channel use the same communication path, so the C2 Server cannot inherently represent each Beacon as an independent communication session. For example, if five Beacons communicate through the same Telegram bot or Discord channel, they will appear as a single C2 communication path rather than five independently identifiable Beacons.
+
+The same limitation affects command responses. When a command is distributed to multiple Beacons through the same bot or channel, the resulting responses are returned through that same communication path. Without an additional Beacon identification mechanism, the C2 Server cannot reliably determine which Beacon generated a specific response.
+
+The direct solution is to assign a dedicated bot to each Beacon on Telegram, or an isolated channel or bot configuration to each Beacon on Discord. This creates a one to one mapping between the Beacon and its communication path, allowing individual Beacons and their responses to be distinguished. The tradeoff is increased infrastructure and management overhead as the number of Beacons increases.
+
+These limitations are specific to using messaging platforms as C2 transport channels and are independent of the Beacon payload itself
+
+
 
 ---
 
