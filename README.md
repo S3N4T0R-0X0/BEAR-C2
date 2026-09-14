@@ -42,7 +42,7 @@ This is why **BEAR C2** was developed to provide **adversary simulation** with f
 
 ## Reaper Node Payload Samples
 
-Reaper Node provides C++ payload samples `/Stagers-Loaders/Reaper Node Samples/` that can be used as customizable templates for environments where a pre-generated payload is not required. The samples contain the core configuration fields required to establish communication with the corresponding Reaper Node instance.
+Reaper Node provides C++ payload samples `/Reaper Node Samples/` that can be used as customizable templates for environments where a pre-generated payload is not required. The samples contain the core configuration fields required to establish communication with the corresponding Reaper Node instance.
 
 Before compiling the payload, the required connection and transport parameters must be configured to match the Reaper Node configuration.
 
