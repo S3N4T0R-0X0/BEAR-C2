@@ -43,9 +43,9 @@ The Listeners Table provides a centralized overview of all active and configured
 
 <img width="999" height="486" alt="Screenshot From 2026-08-26 15-15-37" src="https://github.com/user-attachments/assets/123ceba6-fa3f-4c19-9286-d2ffc8c1909c" />
 
-## Reaper Node Payload Samples
+## Reaper Node Payloads
 
-Reaper Node provides C++/Rust payload samples `/Reaper Node Payloads/` that can be used as customizable templates for environments where a pre-generated payload is not required. The samples contain the core configuration fields required to establish communication with the corresponding Reaper Node instance.
+Reaper Node provides C++/Rust payloads `/Reaper Node Payloads/` that can be used as customizable templates for environments where a pre-generated payload is not required. The Payloads contain the core configuration fields required to establish communication with the corresponding Reaper Node instance.
 
 Before compiling the payload, the required connection and transport parameters must be configured to match the Reaper Node configuration.
 
