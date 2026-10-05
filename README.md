@@ -46,25 +46,10 @@ The Listeners Table provides a centralized overview of all active and configured
 
 ## 💉 Tactical Load (Payload Generator)
 
-**Tactical Load** is the built-in payload generator of BEAR-C2.
+**Tactical Load** is the built-in payload generator of BEAR-C2. It automatically builds customized payloads / beacons according to the selected listener configuration, supporting Payload Types (`EXE`, `DLL`, `BIN`, `HEX`), Network Protocols (`DoH`, `HTTPS`, `HTTP`, `QUIC`, `Reverse TCP`), and Encryption types (`AES`, `XOR`, `RC4`, `DES`, `ChaCha20`, `RSA`, or none). The **Auto Fills** button opens a listener selector window that lists all previously configured listeners from the Listeners Table. When you select a listener, Tactical Load automatically populates the Listener Name, Operator Address + Port, Network Protocol, Encryption type + key, Beacon Auth ID, and URI path. This allows operators to quickly generate matching payloads without manually re-entering listener details.
 
-It automatically builds customized stagers / beacons according to the selected listener configuration:
 
-- Listener Name & Operator Address
-- **Payload Type**: `EXE` · `DLL` · `BIN` · `HEX`
-- Network Protocol (`DoH`, `HTTPS`, `HTTP`, `QUIC`, `Reverse TCP`)
-- Encryption type (`AES`, `XOR`, `RC4`, `DES`, `ChaCha20`, `RSA`, or none)
-- URI path / Beacon Auth ID
-
-### Auto Fills
-
-The **Auto Fills** button opens a listener selector window that lists all previously configured listeners from the Listeners Table.
-
-When you select a listener, Tactical Load automatically populates:
-
-(`Listener Name`, `Operator Address + Port`, `Network Protocol`, `Encryption type + key` , `Beacon Auth ID and URI path`)
-
-This allows operators to quickly generate matching payloads without manually re-entering listener details.
+<img width="924" height="402" alt="Screenshot From 2026-10-05 05-03-27" src="https://github.com/user-attachments/assets/74e5512c-346c-4ba8-bc44-3765e7c106be" />
 
 
 ## 📋 What's New in This Version
