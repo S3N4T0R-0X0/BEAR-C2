@@ -286,8 +286,11 @@ Host and distribute files through a dedicated **Host File** interface with confi
 
 
 <p align="center">
-  <img width="774" height="511" alt="Screenshot From 2026-07-03 09-18-06" src="https://github.com/user-attachments/assets/0c8dcf87-1f29-4c9d-bfc8-6f6d78f69f64" />
+  <img width="774" height="511" alt="Screenshot From 2026-10-05 04-37-52" src="https://github.com/user-attachments/assets/d6ff0a8e-d9ad-4a8c-8938-85fa30333e73" />
 </p>
+
+
+
 
 
 ## 🔐 Script Obfuscator
