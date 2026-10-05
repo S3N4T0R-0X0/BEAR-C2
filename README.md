@@ -44,6 +44,29 @@ The Listeners Table provides a centralized overview of all active and configured
 <img width="999" height="486" alt="Screenshot From 2026-08-26 15-15-37" src="https://github.com/user-attachments/assets/123ceba6-fa3f-4c19-9286-d2ffc8c1909c" />
 
 
+## 💉 Tactical Load (Payload Generator)
+
+**Tactical Load** is the built-in payload generator of BEAR-C2.
+
+It automatically builds customized stagers / beacons according to the selected listener configuration:
+
+- Listener Name & Operator Address
+- **Payload Type**: `EXE` · `DLL` · `BIN` · `HEX`
+- Network Protocol (`DoH`, `HTTPS`, `HTTP`, `QUIC`, `Reverse TCP`)
+- Encryption type (`AES`, `XOR`, `RC4`, `DES`, `ChaCha20`, `RSA`, or none)
+- URI path / Beacon Auth ID
+
+### Auto Fills
+
+The **Auto Fills** button opens a listener selector window that lists all previously configured listeners from the Listeners Table.
+
+When you select a listener, Tactical Load automatically populates:
+
+(`Listener Name`, `Operator Address + Port`, `Network Protocol`, `Encryption type + key` , `Beacon Auth ID and URI path`)
+
+This allows operators to quickly generate matching payloads without manually re-entering listener details.
+
+
 ## 📋 What's New in This Version
 
 This version features a full GUI that streamlines adversary simulation operations through centralized listener management, real-time session tracking, customizable communication profiles, integrated exfiltration workflows, and flexible operator controls for efficient engagement management.
