@@ -85,7 +85,7 @@ echo "[+] Python: $($PYTHON --version)"
 # ------------------------------------------------
 
 # ------------------------------------------------
-# Update pip / build tools (silent)
+# Update pip / build tools 
 # ------------------------------------------------
 
 echo
@@ -100,7 +100,7 @@ echo "[*] Updating pip / setuptools / wheel..."
     pip setuptools wheel >/dev/null 2>&1 || true
 
 # ------------------------------------------------
-# Install only MISSING dependencies (silent)
+# Install only MISSING dependencies
 # ------------------------------------------------
 
 echo
