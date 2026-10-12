@@ -1,6 +1,5 @@
 # BEAR-C2 Adversary Simulation Framework
 ---
-[![Adversary Simulation](https://img.shields.io/badge/Adversary-Simulation-purple?style=flat-square)]() [![TTPs](https://img.shields.io/badge/TTPs-Emulation-blue?style=flat-square)]() [![APT Simulation](https://img.shields.io/badge/Red-Team-darkred?style=flat-square)]() [![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-orange?style=flat-square)]() [![Linux](https://img.shields.io/badge/Platform-Linux-black?style=flat-square)](https://img.shields.io/badge/Platform-Linux-black?style=flat-square)
 
 BEAR-C2 is an adversary simulation and emulation framework built around real world TTPs inspired by `Russian, Chinese, North Korean, and Iranian APT groups.` It provides a flexible environment for diverse engagement scenarios and delivers a realistic foundation for red team operations and adversary emulation drawing from related simulation research in the [APT Attack Simulation Repository](https://github.com/S3N4T0R-0X0/APT-Attack-Simulation). It supports defense evasion techniques and multiple encryption options for accurate representation of real world intrusion scenarios.
 
@@ -71,14 +70,6 @@ This version features a full GUI that streamlines adversary simulation operation
 | **JA3S Fingerprinting** | Customizable `JA3S` fingerprints for traffic simulation and network profile tuning |
 | **Malleable C2 Profiles** | Support for community `Malleable C2 profiles` for flexible network traffic simulation |
 | **Stagers & Loaders** | Automated stager and loader techniques designed for APTs adversary simulation |
-| **Integrated Tooling** | Built-in script obfuscator, phishing toolkit, and file hosting |
-| **TLS Certificate Generation** | Self-signed TLS certificates mimicking trusted vendors |
-| **HTTP Customization** | Base64 URL encoding and custom HTTP headers for both client and server communication |
-| **Real-time Session Manager** | Live status tracking, session monitoring, and real‑time update capabilities |
-| **Custom Naming & URI Paths** | User‑defined campaign names and configurable URI paths for operational flexibility |
-| **Reconnect & Timeout Controls** | Configurable reconnect delays and adjustable timeout thresholds per session |
-| **Authentication Identifiers** | Unique authentication tokens with built‑in expiration controls for enhanced security |
-| **Session Hardening Utilities** | History cleaner, session limiter, and authentication timeout management for active sessions |
 
 ---
 
