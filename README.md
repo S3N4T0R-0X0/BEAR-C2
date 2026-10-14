@@ -241,13 +241,13 @@ C2 Channels introduce limitations related to data transfer and Beacon identifica
 
 Telegram and Discord impose a maximum character limit on individual messages exchanged through their bot APIs. In BEAR C2, the C2 Channel acts as a transport layer between the C2 Server and the Beacon, so this limitation applies to the data being transferred through the channel and not to the size of the Beacon payload itself. Data sent from the C2 Server to the Beacon and data returned from the Beacon to the C2 Server may be Base64 encoded before transmission. Since Base64 increases the size of the transmitted representation, the amount of original data that can be transferred in a single message is lower than the platform character limit.
 
-**[ Telegram ] 4096 characters maximum per message, 4000 characters configured for C2 data transfer**
+**[ Telegram ] `4096 characters` maximum per message, 4000 characters configured for C2 data transfer**
 
 
 <img width="1280" height="557" alt="photo_2026-09-05_08-40-22" src="https://github.com/user-attachments/assets/1702ea7f-1cd5-45c9-99f5-f2dc2531b7e6" />
 
 
-**[ Discord ] 2000 characters maximum per message, 1400 characters configured for C2 data transfer**
+**[ Discord ] `2000 characters` maximum per message, 1400 characters configured for C2 data transfer**
 
 <img width="1280" height="552" alt="photo_2026-09-05_08-41-54" src="https://github.com/user-attachments/assets/881eb8ab-0fec-4420-93be-5798631efc84" />
 
