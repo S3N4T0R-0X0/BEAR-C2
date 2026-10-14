@@ -38,11 +38,6 @@ Every time an operator needs to test a specific **encryption scheme** with a par
 
 This is why **BEAR C2** was developed to provide **adversary simulation** with full customization through the new listener, allowing seamless configuration of  `connection protocols, encryption, exfiltration,` and automated loading techniques. This ensures that simulations can accurately reflect real **APT intrusions** without the need to build custom scripts for every scenario.
 
-The Listeners Table provides a centralized overview of all active and configured C2 listeners. It displays essential details such as **listener name, address, network protocol, encryption method, exfiltration profile**, and current status (Active or Stopped/Disconnected). From this interface, operators can start, stop, rename, or remove listeners with ease. It also offers quick access to encryption keys and authentication IDs for managing beacon communication. This table serves as the command hub for orchestrating and monitoring your C2 infrastructure.
-
-<img width="999" height="486" alt="Screenshot From 2026-08-26 15-15-37" src="https://github.com/user-attachments/assets/123ceba6-fa3f-4c19-9286-d2ffc8c1909c" />
-
-
 ### 💉 Payload Generator
 
 **payload generator** of BEAR-C2. It automatically builds customized payloads / beacons according to the selected listener configuration, supporting Payload Types (`EXE`, `DLL`, `BIN`, `HEX`), Network Protocols (`DoH`, `HTTPS`, `HTTP`, `QUIC`, `Reverse TCP`), and Encryption types (`AES`, `XOR`, `RC4`, `DES`, `ChaCha20`, `RSA`, or none). The **Auto Fills** button opens a listener selector window that lists all previously configured listeners from the Listeners Table. When you select a listener, Tactical Load automatically populates the Listener Name, Operator Address + Port, Network Protocol, Encryption type + key, Beacon Auth ID, and URI path. This allows operators to quickly generate matching payloads without manually re-entering listener details.
@@ -50,11 +45,16 @@ The Listeners Table provides a centralized overview of all active and configured
 
 <img width="927" height="404" alt="Screenshot From 2026-10-09 05-49-27" src="https://github.com/user-attachments/assets/530dc3f3-4e36-4322-9ad4-7077eab7cb84" />
 
+### 📋 Listeners Table 
+
+The Listeners Table provides a centralized overview of all active and configured C2 listeners. It displays essential details such as **listener name, address, network protocol, encryption method, exfiltration profile**, and current status (Active or Stopped/Disconnected). From this interface, operators can start, stop, rename, or remove listeners with ease. It also offers quick access to encryption keys and authentication IDs for managing beacon communication. This table serves as the command hub for orchestrating and monitoring your C2 infrastructure.
+
+<img width="999" height="486" alt="Screenshot From 2026-08-26 15-15-37" src="https://github.com/user-attachments/assets/123ceba6-fa3f-4c19-9286-d2ffc8c1909c" />
 
 
-## 📋 What's New in This Version
 
-This version features a full GUI that streamlines adversary simulation operations through centralized listener management, real-time session tracking, customizable communication profiles, integrated exfiltration workflows, and flexible operator controls for efficient engagement management.
+###  What's New in This Version? 
+
 
 > ⚠️ **NOTE:** This project is under active development. Features are continuously added and improved.
 
@@ -69,13 +69,12 @@ This version features a full GUI that streamlines adversary simulation operation
 | **Dynamic Domain Generation Algorithm** | `DGA` support for resilient infrastructure simulation |
 | **JA3S Fingerprinting** | Customizable `JA3S` fingerprints for traffic simulation and network profile tuning |
 | **Malleable C2 Profiles** | Support for community `Malleable C2 profiles` for flexible network traffic simulation |
-| **Stagers & Loaders** | Automated stager and loader techniques designed for APTs adversary simulation |
 
 ---
 
 
 
-## 📤 Exfiltration Profiles
+### 📤 Exfiltration Profiles
 
 Configure per-session exfiltration settings for supported cloud storage providers such as `Google Drive, OneDrive, and Dropbox.` The **Exfiltration Profile** interface allows you to define API access tokens and destination folder paths, enabling you to customize data collection workflows for each session. Each session can use its own exfiltration profile, making it easy to route collected data to different cloud storage providers or destinations depending on the operation.
 
@@ -83,7 +82,7 @@ Configure per-session exfiltration settings for supported cloud storage provider
 <img width="2423" height="708" alt="4" src="https://github.com/user-attachments/assets/72b66bb2-335f-4a96-ba77-9f76b40d55e0" />
 
 
-## 💬 Integrated C2 Channels 
+### 💬 Integrated C2 Channels 
 
 ### (Telegram-based Agent)
 
@@ -272,7 +271,7 @@ Using a shared Telegram bot or Discord channel causes multiple Beacons to appear
 
 ---
 
-## 🪝 Spear Phishing Simulation
+### 🪝 Spear Phishing Simulation
 
 Simulate spear-phishing campaigns through a dedicated interface for configuring and managing phishing scenarios during authorized adversary simulation exercises. The module provides campaign controls such as **victim submission limits**, configurable phishing parameters, and session management, allowing operators to control campaign behavior and evaluate user interaction with simulated phishing scenarios. It is designed to support controlled phishing assessments while providing operators with greater visibility and control over campaign execution.
 
@@ -280,7 +279,7 @@ Simulate spear-phishing campaigns through a dedicated interface for configuring 
 
 
 
-## 🔗 Host File
+### 🔗 Host File
 
 Host and distribute files through a dedicated **Host File** interface with configurable server settings and automated file delivery. Hosted files are automatically loaded when accessed, without requiring user interaction or a manual download prompt. The interface provides centralized file hosting and delivery management for controlled adversary simulation and authorized security testing workflows.
 
@@ -293,7 +292,7 @@ Host and distribute files through a dedicated **Host File** interface with confi
 
 
 
-## 🔐 Script Obfuscator
+### 🔐 Script Obfuscator
 
 The **Script Obfuscator** provides a comprehensive obfuscation engine supporting **PS1, BAT, HTML, VBS, JS, and PY** payloads with multiple configurable obfuscation layers. It includes `variable and function renaming, string encryption, junk code insertion, multi-layer obfuscation, anti-debugging techniques, and XOR-based payload encryption.` These features increase analysis complexity, reduce script readability, and make reverse engineering significantly more difficult while helping payloads better withstand static analysis.
 
