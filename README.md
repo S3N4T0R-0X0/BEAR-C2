@@ -12,7 +12,7 @@ BEAR-C2 is an adversary simulation and emulation framework built around real wor
 > [!CAUTION]
 > It's essential to note that this project is for educational and research purposes only, and any unauthorized use of it could lead to legal consequences.
 
-## 🏗 Install dependencies and compile:
+### 🏗 Install dependencies and compile:
 
 ```bash
 git clone https://github.com/S3N4T0R-0X0/BEAR-C2.git && cd BEAR-C2
@@ -377,7 +377,7 @@ The **Script Obfuscator** provides a comprehensive obfuscation engine supporting
 </div>
 
 
-## 📫 Contact
+### 📫 Contact
 
 <table align="center">
   <tr>
