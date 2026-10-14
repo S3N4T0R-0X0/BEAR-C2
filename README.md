@@ -81,8 +81,9 @@ Configure per-session exfiltration settings for supported cloud storage provider
 
 <img width="2423" height="708" alt="4" src="https://github.com/user-attachments/assets/72b66bb2-335f-4a96-ba77-9f76b40d55e0" />
 
+---
 
-### 💬 Integrated C2 Channels 
+## 💬 Integrated C2 Channels 
 
 ### (Telegram-based Agent)
 
