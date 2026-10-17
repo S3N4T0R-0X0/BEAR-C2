@@ -15,16 +15,32 @@ BEAR-C2 is an adversary simulation and emulation framework built around real wor
 ### 🏗 Install dependencies and compile:
 
 ```bash
-git clone https://github.com/S3N4T0R-0X0/BEAR-C2.git && cd BEAR-C2
-
 chmod +x Makefile && ./Makefile
 
 ./BEAR-C2
 ```
 ---
 
+###  What's New in This Version? 
 
-## 🧠 The Challenge with Adversary Simulation:
+
+> ⚠️ **NOTE:** This project is under active development. Features are continuously added and improved.
+
+
+| Feature | Description |
+|----------|-------------|
+| **Multi-Protocol Listeners** | `DoH`, `HTTPS`, `HTTP`, `QUIC`, `Reverse TCP` |
+| **Per-Listener Encryption** | `AES`, `XOR`, `RC4`, `DES`, `ChaCha20`, `RSA` |
+| **Exfiltration Profiles** | `Google Drive`, `OneDrive`, `Dropbox` |
+| **Integrated C2 Channels** | Integrated `Telegram`, `Discord`  C2 communication channel |
+| **Proxy Support** | `SOCKS4`, `SOCKS4a`, and `SOCKS5` proxy and redirector support |
+| **Dynamic Domain Generation Algorithm** | `DGA` support for resilient infrastructure simulation |
+| **JA3S Fingerprinting** | Customizable `JA3S` fingerprints for traffic simulation and network profile tuning |
+| **Malleable C2 Profiles** | Support for community `Malleable C2 profiles` for flexible network traffic simulation |
+
+
+
+### 🧠 The Challenge with Adversary Simulation:
 
 Accurately replicating **APT techniques** requires a `flexible environment capable of mimicking connection protocols, encryption methods, exfiltration techniques, and C2 Channels/Profiles` used in modern intrusions. However, achieving this level of precision has always been a challenge.
 
