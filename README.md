@@ -88,13 +88,6 @@ The Telegram communication layer uses a Telegram bot as the intermediary between
 
 <img width="1366" height="739" alt="4" src="https://github.com/user-attachments/assets/195df4ad-20da-41b3-ad17-0913474b2df0" />
 
-
-The bot's Bot Token is embedded in the payload, allowing the payload to communicate with the bot through the Telegram API. Commands are sent from the C2 server to the bot, and the bot forwards them to the payload, which executes the received tasking and returns the results through the same communication path. This creates a bidirectional command and control channel using Telegram as the communication layer.
-
-<img width="1736" height="893" alt="Telegram" src="https://github.com/user-attachments/assets/8cdcf611-95c7-4f9c-ae78-b6230e3cbc91" />
-
-
-
 ---
 
 ### (Discord-based Agent)
@@ -102,13 +95,6 @@ The bot's Bot Token is embedded in the payload, allowing the payload to communic
 This stage replaces the traditional command and control communication channel with a **Discord-based communication layer** using the **Discord Gateway API**. Instead of relying on dedicated servers, fixed IP addresses, or custom domains, operators communicate with the simulated implant through a private Discord channel.
 
 <img width="1366" height="739" alt="5" src="https://github.com/user-attachments/assets/4ab2dc7a-363e-4d18-bc5e-4b1db35f5a50" />
-
-The Discord communication layer uses two Discord bots connected through the same Discord channel. One bot is connected to the C2 server, while the second bot is assigned to the payload. The two bots communicate through the shared Discord channel, allowing tasking and communication between the C2 server and payload through Discord.
-
-Since Discord does not allow bots to directly communicate with other bots, using a shared channel provides the communication path between the two sides.
-
-
-<img width="3472" height="1784" alt="discord" src="https://github.com/user-attachments/assets/439f79ae-58ed-4846-b332-ab567d0c0e78" />
 
 
 ---
