@@ -51,23 +51,6 @@ The Listeners Table provides a centralized overview of all active and configured
 
 
 
-###  What's New in This Version? 
-
-
-> ⚠️ **NOTE:** This project is under active development. Features are continuously added and improved.
-
-
-| Feature | Description |
-|----------|-------------|
-| **Multi-Protocol Listeners** | `DoH`, `HTTPS`, `HTTP`, `QUIC`, `Reverse TCP` |
-| **Per-Listener Encryption** | `AES`, `XOR`, `RC4`, `DES`, `ChaCha20`, `RSA` |
-| **Exfiltration Profiles** | `Google Drive`, `OneDrive`, `Dropbox` |
-| **Integrated C2 Channels** | Integrated `Telegram`, `Discord`  C2 communication channel |
-| **Proxy Support** | `SOCKS4`, `SOCKS4a`, and `SOCKS5` proxy and redirector support |
-| **Dynamic Domain Generation Algorithm** | `DGA` support for resilient infrastructure simulation |
-| **JA3S Fingerprinting** | Customizable `JA3S` fingerprints for traffic simulation and network profile tuning |
-| **Malleable C2 Profiles** | Support for community `Malleable C2 profiles` for flexible network traffic simulation |
-
 ---
 
 
