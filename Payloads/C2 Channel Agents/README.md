@@ -1,7 +1,9 @@
-
-This file is for payload testing only and is designed to help you understand the BEAR C2 architecture and customize payloads for adversary simulation purposes.
-
 # How to Use the Telegram Agent
+
+The bot's Bot Token is embedded in the payload, allowing the payload to communicate with the bot through the Telegram API. Commands are sent from the C2 server to the bot, and the bot forwards them to the payload, which executes the received tasking and returns the results through the same communication path. This creates a bidirectional command and control channel using Telegram as the communication layer.
+
+<img width="1736" height="893" alt="Telegram" src="https://github.com/user-attachments/assets/8cdcf611-95c7-4f9c-ae78-b6230e3cbc91" />
+
 
 ### 1. Create the Telegram Bot
 
@@ -49,7 +51,13 @@ The `API ID` and `API Hash` are used by the BEAR-C2 Telegram integration, while 
 ---
 # How to Use the Discord Agent
 
-The Discord Agent uses the Discord Gateway and API as the communication layer between the payload and BEAR-C2. The setup requires Discord Bot applications, a dedicated text channel, the required bot permissions, and the corresponding values configured in the C++ agent sample.
+The Discord communication layer uses two Discord bots connected through the same Discord channel. One bot is connected to the C2 server, while the second bot is assigned to the payload. The two bots communicate through the shared Discord channel, allowing tasking and communication between the C2 server and payload through Discord.
+
+Since Discord does not allow bots to directly communicate with other bots, using a shared channel provides the communication path between the two sides.
+
+
+<img width="3472" height="1784" alt="discord" src="https://github.com/user-attachments/assets/439f79ae-58ed-4846-b332-ab567d0c0e78" />
+
 
 ### 1. Create the Discord Bot Applications
 
