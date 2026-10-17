@@ -28,13 +28,12 @@ chmod +x Makefile && ./Makefile
 
 Accurately replicating **APT techniques** requires a `flexible environment capable of mimicking connection protocols, encryption methods, exfiltration techniques, and C2 Channels/Profiles` used in modern intrusions. However, achieving this level of precision has always been a challenge.
 
-<img width="1366" height="732" alt="main " src="https://github.com/user-attachments/assets/2169f618-3255-4c15-a2be-af0c0d8dfd43" />
+<img width="1366" height="738" alt="1" src="https://github.com/user-attachments/assets/1454a709-46be-4677-a3d0-7b9f6abadfd7" />
 
 
 Every time an operator needs to test a specific **encryption scheme** with a particular **exfiltration profile**, a separate **C2 script** `must be built to match the attack scenario.` For example, one simulation might require **AES encryption** with **OneDrive exfiltration**, while another might need **a different encryption method** combined with **Dropbox exfiltration** to reflect the techniques observed in real world attacks. This lack of flexibility makes the process inefficient and time consuming.
 
-<img width="1359" height="680" alt="Screenshot From 2026-09-01 05-54-48" src="https://github.com/user-attachments/assets/339e099d-34ff-4ed0-9660-4c91f108ab29" />
-
+<img width="1358" height="684" alt="2" src="https://github.com/user-attachments/assets/23d901d8-6c2a-4cf0-834b-40ff63cb2601" />
 
 This is why **BEAR C2** was developed to provide **adversary simulation** with full customization through the new listener, allowing seamless configuration of  `connection protocols, encryption, exfiltration,` and automated loading techniques. This ensures that simulations can accurately reflect real **APT intrusions** without the need to build custom scripts for every scenario.
 
@@ -42,8 +41,7 @@ This is why **BEAR C2** was developed to provide **adversary simulation** with f
 
 **payload generator** of BEAR-C2. It automatically builds customized payloads / beacons according to the selected listener configuration, supporting Payload Types (`EXE`, `DLL`, `BIN`, `HEX`), Network Protocols (`DoH`, `HTTPS`, `HTTP`, `QUIC`, `Reverse TCP`), and Encryption types (`AES`, `XOR`, `RC4`, `DES`, `ChaCha20`, `RSA`, or none). The **Auto Fills** button opens a listener selector window that lists all previously configured listeners from the Listeners Table. When you select a listener, Tactical Load automatically populates the Listener Name, Operator Address + Port, Network Protocol, Encryption type + key, Beacon Auth ID, and URI path. This allows operators to quickly generate matching payloads without manually re-entering listener details.
 
-
-<img width="927" height="404" alt="Screenshot From 2026-10-09 05-49-27" src="https://github.com/user-attachments/assets/530dc3f3-4e36-4322-9ad4-7077eab7cb84" />
+<img width="929" height="407" alt="3" src="https://github.com/user-attachments/assets/174f8af1-cdba-435e-a6d1-0e38d086806c" />
 
 ## 📋 Listeners Table 
 
@@ -86,12 +84,9 @@ Configure per-session exfiltration settings for supported cloud storage provider
 
 ### (Telegram-based Agent)
 
+The Telegram communication layer uses a Telegram bot as the intermediary between the C2 server and the payload. The C2 server authenticates to the Telegram account using the configured API ID, API Hash, and Phone Number, then connects to the previously created Telegram bot through that account.
 
-
-The Telegram communication layer uses a Telegram bot as the intermediary between the C2 server and the payload. The C2 server authenticates to the Telegram account using the configured API ID, API Hash, and Phone Number, then connects to the previously created Telegram bot through that account
-
-<img width="1276" height="585" alt="5" src="https://github.com/user-attachments/assets/751c6afa-a2fb-45f7-9d99-efcf554f78d8" />
-
+<img width="1366" height="739" alt="4" src="https://github.com/user-attachments/assets/195df4ad-20da-41b3-ad17-0913474b2df0" />
 
 
 The bot's Bot Token is embedded in the payload, allowing the payload to communicate with the bot through the Telegram API. Commands are sent from the C2 server to the bot, and the bot forwards them to the payload, which executes the received tasking and returns the results through the same communication path. This creates a bidirectional command and control channel using Telegram as the communication layer.
@@ -106,9 +101,7 @@ The bot's Bot Token is embedded in the payload, allowing the payload to communic
 
 This stage replaces the traditional command and control communication channel with a **Discord-based communication layer** using the **Discord Gateway API**. Instead of relying on dedicated servers, fixed IP addresses, or custom domains, operators communicate with the simulated implant through a private Discord channel.
 
-
-<img width="1276" height="577" alt="6" src="https://github.com/user-attachments/assets/e0232e1c-725e-486d-925d-9172c7dd5c06" />
-
+<img width="1366" height="739" alt="5" src="https://github.com/user-attachments/assets/4ab2dc7a-363e-4d18-bc5e-4b1db35f5a50" />
 
 The Discord communication layer uses two Discord bots connected through the same Discord channel. One bot is connected to the C2 server, while the second bot is assigned to the payload. The two bots communicate through the shared Discord channel, allowing tasking and communication between the C2 server and payload through Discord.
 
@@ -124,7 +117,7 @@ Since Discord does not allow bots to directly communicate with other bots, using
 
 Simulate spear-phishing campaigns through a dedicated interface for configuring and managing phishing scenarios during authorized adversary simulation exercises. The module provides campaign controls such as **victim submission limits**, configurable phishing parameters, and session management, allowing operators to control campaign behavior and evaluate user interaction with simulated phishing scenarios. It is designed to support controlled phishing assessments while providing operators with greater visibility and control over campaign execution.
 
-<img width="1340" height="562" alt="7" src="https://github.com/user-attachments/assets/ceeeee51-bb6c-4e90-b84a-a9c4397cae3a" />
+<img width="1336" height="553" alt="6" src="https://github.com/user-attachments/assets/78a106c7-0244-4693-9027-0a83d389f1be" />
 
 
 
