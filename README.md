@@ -98,6 +98,12 @@ This stage replaces the traditional command and control communication channel wi
 <img width="1366" height="739" alt="5" src="https://github.com/user-attachments/assets/4ab2dc7a-363e-4d18-bc5e-4b1db35f5a50" />
 
 
+## 💉 Evil Agent
+
+**evil agent** is a payload generator for BEAR-C2 that builds customized agents communicating through third-party messaging platforms, supporting Agent Types (`Discord`, `Telegram`), Payload Types (`EXE`, `DLL`, `BIN`, `HEX`), and a configurable Max Message Size. The interface dynamically displays the required fields for each agent type: `Bot Token`, `Channel ID`, and `User ID` for Discord, or `Bot Token` only for Telegram, providing an alternative communication channel through existing messaging platforms without requiring a dedicated listener or exposed port.
+
+
+
 
 ---
 
