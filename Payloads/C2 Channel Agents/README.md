@@ -49,6 +49,18 @@ Select Telegram as the Agent Type. The interface requires the following configur
 <img width="575" height="484" alt="Screenshot From 2026-10-19 04-19-22" src="https://github.com/user-attachments/assets/86836980-6486-4c7d-bf12-aef3dc4e12a8" />
 </p>
 
+
+### 4. Configure the Telegram Bot in BEAR-C2
+
+In the Telegram Bot configuration window inside BEAR-C2, provide the required API ID, API Hash, Phone Number, Listener Name, and Bot Username. You can also configure the Max Message Size, which defaults to 4000.
+
+<p align="center">
+<img width="495" height="314" alt="Screenshot From 2026-10-19 04-25-30" src="https://github.com/user-attachments/assets/d4788acd-e126-4061-b484-9c0d96409f9e" />
+</p>
+
+The Telegram integration uses the API credentials and account details to configure the Telegram communication channel, while the Listener Name identifies the associated listener configuration.
+
+
 ---
 # How to Use the Discord Agent
 
@@ -125,8 +137,6 @@ In the Discord Channel configuration inside BEAR-C2, provide the corresponding `
 <img width="927" height="230" alt="Screenshot From 2026-09-09 10-26-11" src="https://github.com/user-attachments/assets/4d88d0d4-d901-4706-ba53-67f3dac42bc2" />
 
 The C2 Bot and Payload Bot use the same Discord channel as the communication path, while each side authenticates using its own Bot Token.
-
-After the Discord configuration and payload sample have been completed, compile the C++ Agent for use in the authorized adversary simulation environment.
 
 ---
 > ⚠️ **NOTE:** C2 Channel Limitations
