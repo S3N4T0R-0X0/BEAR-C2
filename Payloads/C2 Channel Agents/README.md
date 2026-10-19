@@ -132,9 +132,11 @@ Once the required fields are configured, review the settings in the Evil Agent i
 
 ### 5. Configure the Discord Channel in BEAR-C2
 
-In the Discord Channel configuration inside BEAR-C2, provide the corresponding `C2 Bot Token, Channel ID, and Listener Name.`
+In the Discord Channel configuration inside BEAR-C2, provide the corresponding `C2 Bot Token, Channel ID,  Max Message Size and Listener Name`
 
-<img width="927" height="230" alt="Screenshot From 2026-09-09 10-26-11" src="https://github.com/user-attachments/assets/4d88d0d4-d901-4706-ba53-67f3dac42bc2" />
+<p align="center">
+<img width="494" height="244" alt="Screenshot From 2026-10-19 04-43-15" src="https://github.com/user-attachments/assets/0c7ff7fa-ecb0-4f0c-b7a6-0c01905f5b0e" />
+</p>
 
 The C2 Bot and Payload Bot use the same Discord channel as the communication path, while each side authenticates using its own Bot Token.
 
