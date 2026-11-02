@@ -81,13 +81,11 @@ Configure per-session exfiltration settings for supported cloud storage provider
 
 ## 💬 Integrated C2 Channels 
 
-### (Telegram-based Agent)
+- [How to Use the Telegram Agent](https://github.com/S3N4T0R-0X0/BEAR-C2/tree/main/Payloads/C2%20Channel%20Agents#how-to-use-the-telegram-agent)
+
 
 The Telegram communication layer uses a Telegram bot as the intermediary between the C2 server and the payload. The C2 server authenticates to the Telegram account using the configured API ID, API Hash, and Phone Number, then connects to the previously created Telegram bot through that account. 
 
----
-
-- [How to Use the Telegram Agent](https://github.com/S3N4T0R-0X0/BEAR-C2/tree/main/Payloads/C2%20Channel%20Agents#how-to-use-the-telegram-agent)
 
 ---
 
@@ -96,12 +94,9 @@ The Telegram communication layer uses a Telegram bot as the intermediary between
 
 ---
 
-### (Discord-based Agent)
+- [How to Use the Discord Agent](https://github.com/S3N4T0R-0X0/BEAR-C2/tree/main/Payloads/C2%20Channel%20Agents#how-to-use-the-discord-agent)
 
 This stage replaces the traditional command and control communication channel with a **Discord-based communication layer** using the **Discord Gateway API**. Instead of relying on dedicated servers, fixed IP addresses, or custom domains, operators communicate with the simulated implant through a private Discord channel.  
-
----
-- [How to Use the Discord Agent](https://github.com/S3N4T0R-0X0/BEAR-C2/tree/main/Payloads/C2%20Channel%20Agents#how-to-use-the-discord-agent)
 
 ---
 
